@@ -92,3 +92,8 @@ npm run db:migrate
 ## Homepage hero update
 
 The homepage uses a cinematic editorial composition: full-bleed salon photography, dark photographic grading, refined headline and clear appointment/menu actions, plus a framed secondary studio photograph. The oversized decorative 3D product bottle has been removed from the first screen so the salon and editorial imagery remain the focus. The secondary photograph is concept media; replace it with salon-owned or properly licensed campaign photography before launch and record its license in ASSET_REGISTER.md.
+
+
+## Hero campaign video (optional)
+
+The homepage hero supports an optional silent MP4 or WebM campaign loop. Keep `NEXT_PUBLIC_LAUXIRIO_HERO_VIDEO_SRC` unset to use the poster image only. For setup, recommended export settings, reduced-motion behavior and licensing records, see [docs/HERO_MEDIA.md](./docs/HERO_MEDIA.md). The video must be owned by Lauxirio or cleared for commercial website use; do not publish stock previews or watermarked footage.

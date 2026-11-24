@@ -10,7 +10,8 @@ Acquisition date: Not acquired (remote URL reference). Code references were pres
 
 | Asset identifier | Creator | License status | Intended use |
 |---|---|---|---|
-| `photo-1560066984-138dadb4c035` | Unknown from CDN URL | Unverified; placeholder | Hero, service list |
+| `photo-1560066984-138dadb4c035` | Unknown from CDN URL | Unverified; placeholder | Hero background poster, service list |
+| `photo-1521590832167-7bcbfaa6381f` | Unknown from CDN URL | Unverified; placeholder | Hero editorial inset photograph |
 | `photo-1522337360788-8b13dee7a37e` | Unknown from CDN URL | Unverified; placeholder | Service list |
 | `photo-1487412947147-5cebf100ffc2` | Unknown from CDN URL | Unverified; placeholder | Service list |
 | `photo-1527799820374-dcf8d9d4a388` | Unknown from CDN URL | Unverified; placeholder | Service list |
@@ -35,3 +36,8 @@ Acquisition date: Not acquired (remote URL reference). Code references were pres
 5. Never use another salon's campaign, logo, lookbook or proprietary content. Do not remove watermarks or bypass paywalls.
 
 No campaign video has been added. No paid asset has been acquired.
+
+
+## Hero campaign video slot
+
+No campaign video is currently configured or acquired. The hero video is opt-in through `NEXT_PUBLIC_LAUXIRIO_HERO_VIDEO_SRC`; leave it unset to retain the still-image fallback. When supplied, register its filename, creator, source page, license/receipt reference, acquisition date, allowed commercial use and intended placements here before enabling it.

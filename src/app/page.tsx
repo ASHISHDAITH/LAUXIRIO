@@ -2,9 +2,9 @@ import Image from "next/image";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import BookingForm from "@/components/BookingForm";
 import { Suspense } from "react";
-import HeroScene from "@/components/HeroScene";
 import { GalleryExplorer, ServiceExplorer } from "@/components/InteractiveSections";
 import Preloader from "@/components/Preloader";
+import HeroCampaignMedia from "@/components/HeroCampaignMedia";
 
 const experts = [
   ["https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=85", "Hair Artist", "Cutting & Styling", "Editorial cutting · Texture-led styling"],
@@ -18,16 +18,10 @@ export default function Home() {
       <Preloader />
       <main id="top">
         <section className="hero hero-editorial" aria-labelledby="hero-title">
-          <div className="hero-photo" aria-hidden="true">
-            <Image
-              src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2400&q=90"
-              alt=""
-              fill
-              priority
-              sizes="100vw"
-              quality={90}
-            />
-          </div>
+          <HeroCampaignMedia
+            posterSrc="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2400&q=90"
+            videoSrc={process.env.NEXT_PUBLIC_LAUXIRIO_HERO_VIDEO_SRC}
+          />
           <div className="hero-grain" aria-hidden="true" />
           <div className="hero-vignette" aria-hidden="true" />
           <div className="hero-editorial-index" aria-hidden="true">
