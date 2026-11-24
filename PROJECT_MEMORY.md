@@ -7,6 +7,8 @@
 - `/admin` needs a strong `ADMIN_API_TOKEN`; optional salon email requires Resend configuration.
 - Current Unsplash images are placeholders, not cleared brand assets. Refer to `ASSET_REGISTER.md`.
 - Image sources and metadata belong in `src/config/media.ts`; page service/editorial content belongs in `src/config/content.ts`. Keep placeholder disclosures until assets are licensed/approved.
+- Phase 3 media records use `approved-owned`, `approved-licensed` or `unverified-placeholder`; never mark a placeholder approved to clear the audit. Run `npm run audit:media` after media changes and keep `ASSET_REGISTER.md`, `docs/MEDIA_AUDIT.md` and the shot list aligned.
+- No approved campaign media or video currently exists. Do not enable the optional hero video or purchase assets/subscriptions until the owner provides/approves the files and rights.
 - Keep generic artist roles only until identities and biographies are confirmed; journal drafts must not imply publication dates or expert credentials.
 - Service UI must continue using the six IDs in `src/lib/booking-config.ts`; do not change booking/backend behavior without a separate request.
 - New public route prefixes must be allowed explicitly by `src/proxy.ts`; `/journal/*` is enabled for generated article previews.
