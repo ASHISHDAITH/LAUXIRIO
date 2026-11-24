@@ -46,6 +46,19 @@
 - Added explicit asset provenance/status fields to `src/config/media.ts` while retaining all existing image references as `unverified-placeholder`.
 - Added `scripts/audit-media.mjs` and the `npm run audit:media` command; it checks local image/video paths, alt text, declared dimensions, status and provenance fields, and writes `docs/MEDIA_AUDIT.md`.
 - Added a complete media shot list, creative direction, source-term research notes and owner acquisition/approval guidance.
-- No image or video was downloaded or purchased; no hero video is configured.
-- The generated audit found 22 unverified image placements, zero approved assets, six repeated remote source images, zero broken local media paths and no configured hero video. Creator/source/license/acquisition metadata is missing for all 22 placements.
-- Owner still needs to supply or approve the real campaign, service, lookbook, staff/process and studio media listed in `docs/MEDIA_SHOT_LIST.md`, plus asset-specific rights/release records. See `docs/MEDIA_AUDIT.md` for current findings.
+- The Phase 3 baseline had 22 unverified image placements, six repeated remote source images, zero broken local media paths and no configured hero video.
+
+## Phase 4 free-source media
+
+- Added seven Pexels photos as locally optimized WebP references with creator, source page, platform-license URL, acquisition date, dimensions, alt text and intended placement. Separate model/property releases and other third-party permissions remain unverified; assets are `licensed-review-pending`, not final production-approved.
+- Kept the assets illustrative and added visible hero, service and lookbook disclosures; no stock image is described as LAUXIRIO work, a real client result, a staff member or the actual studio.
+- No paid assets or video were added.
+
+## Phase 4B free-source editorial media
+
+- Researched 14 original Pexels asset pages, inspected their images, and recorded source links, creators, original dimensions, placement fit, visible people/branding and selection or rejection reasons in `ASSET_REGISTER.md`.
+- Selected and integrated seven additional face-free or face-cropped Pexels references as optimized WebP files. Each is `licensed-review-pending`; all seven Phase 4 assets retain that status as well.
+- Updated the homepage and journal/lookbook disclosures so stock is described as illustrative inspiration, not LAUXIRIO premises, staff, campaign work or client results. The lookbook heading no longer implies the grid is verified salon work.
+- The audit now records missing third-party rights evidence and detects repeated local as well as remote source files. The expected non-zero exit remains while rights reviews and placeholders are outstanding.
+- Eight placements remain unverified: three artist portraits, two actual-studio images and three lookbook images for which a suitable candidate was not verified. The optional campaign video remains disabled.
+- Owner still needs to supply genuine campaign, team, client-result and studio photography, plus relevant rights/release evidence; see `docs/MEDIA_SHOT_LIST.md`.

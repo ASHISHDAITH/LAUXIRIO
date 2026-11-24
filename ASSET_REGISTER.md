@@ -2,34 +2,57 @@
 
 ## Readiness
 
-There are no approved-owned or approved-licensed campaign assets in this repository. The website currently references 22 Unsplash CDN image placements, all explicitly marked `unverified-placeholder`. They are concept references only; do not imply that they depict LAUXIRIO, its premises, staff or customers. No asset has been individually selected, downloaded, attributed, or cleared for this campaign, and no paid asset or subscription has been acquired.
+The media catalog contains 14 `licensed-review-pending` Pexels stock references stored as optimized local WebP files and eight `unverified-placeholder` placements. Their source pages and Pexels platform-license URL are recorded, but separate model/property releases and other third-party permissions have not been verified; none is approved for final production use. They do not depict LAUXIRIO, constitute official campaign results, or imply endorsement. Do not repurpose them as staff, client results, or actual studio photography. No paid asset or subscription has been acquired.
 
-The canonical per-placement metadata is in [`src/config/media.ts`](./src/config/media.ts). Run `npm run audit:media` to regenerate [`docs/MEDIA_AUDIT.md`](./docs/MEDIA_AUDIT.md). The audit currently reports 22 placeholders, zero approved assets, 22 missing creator/source/license/acquisition records, six repeated source images, no broken local media paths, and no configured campaign video.
+The canonical per-placement metadata is in [`src/config/media.ts`](./src/config/media.ts). Run `npm run audit:media` to regenerate [`docs/MEDIA_AUDIT.md`](./docs/MEDIA_AUDIT.md). Eight placeholders remain: three artist portraits, two actual-studio images, and three lookbook images that did not have suitable face-free candidates. No real LAUXIRIO campaign, team, client-result, or studio media has been supplied; the optional campaign video remains unconfigured.
 
-## Current remote placeholders
+## Selected free-source stock references
 
-The 22 records below are placement entries, not 22 distinct photographs. Their full IDs, dimensions, alt descriptions and intended placements are in the media configuration and generated audit report.
+Each item is an illustrative reference only. Pexels' platform license is recorded for the free commercial-use terms; creator names are retained as provenance. Platform permission is distinct from full rights clearance. No separate model/property release documents or other third-party permission records are held, so keep the visible stock disclosures in place and do not imply endorsement.
 
-| Unsplash photo ID | Current status | Notes |
-|---|---|---|
-| `photo-1560066984-138dadb4c035` | `unverified-placeholder` | Homepage hero and signature-cut service |
-| `photo-1521590832167-7bcbfaa6381f` | `unverified-placeholder` | Homepage inset and studio interior |
-| `photo-1560869713-7d0a29430803` | `unverified-placeholder` | Philosophy section and studio detail |
-| `photo-1522337360788-8b13dee7a37e` | `unverified-placeholder` | Dimensional colour and lookbook |
-| `photo-1527799820374-dcf8d9d4a388` | `unverified-placeholder` | Hair and scalp service |
-| `photo-1503951914875-452162b0f3f1` | `unverified-placeholder` | Grooming service and lookbook |
-| `photo-1519741497674-611481863552` | `unverified-placeholder` | Bridal and occasion service |
-| `photo-1487412947147-5cebf100ffc2` | `unverified-placeholder` | Consultation service and beauty lookbook |
-| `photo-1562322140-8baeececf3df` | `unverified-placeholder` | Lookbook haircut and journal preview |
-| `photo-1524504388940-b1c1722653e1` | `unverified-placeholder` | Lookbook colour and journal preview |
-| `photo-1488426862026-3ee34a7d66df` | `unverified-placeholder` | Lookbook bridal and occasion |
-| `photo-1633681926022-84c23e8cb2d6` | `unverified-placeholder` | Lookbook texture and journal preview |
-| `photo-1526047932273-341f2a7631f9` | `unverified-placeholder` | Lookbook editorial styling |
-| `photo-1494790108377-be9c29b29330` | `unverified-placeholder` | Illustrative artist portrait; not a LAUXIRIO stylist |
-| `photo-1500648767791-00dcc994a43e` | `unverified-placeholder` | Illustrative artist portrait; not a LAUXIRIO stylist |
-| `photo-1534528741775-53994a69daeb` | `unverified-placeholder` | Illustrative artist portrait; not a LAUXIRIO stylist |
+| Pexels photo | Creator | Placement | Local optimized file | Original asset page |
+|---|---|---|---|---|
+| `6487888` | Matheus Wladeka | Homepage hero poster | `public/media/hero/hero-stylist-detail.webp` | [Pexels](https://www.pexels.com/photo/close-up-of-the-hands-of-a-hairdresser-at-work-6487888/) |
+| `6503332` | Nadezhda Moryak | Signature cut service | `public/media/services/signature-cut-process.webp` | [Pexels](https://www.pexels.com/photo/close-up-photo-of-person-combing-a-hair-6503332/) |
+| `6391646` | Lyn [Lynbot] Michelle | Dimensional colour service | `public/media/services/dimensional-colour-curls.webp` | [Pexels](https://www.pexels.com/photo/a-back-view-of-a-woman-in-denim-jacket-with-a-curly-hair-6391646/) |
+| `23349912` | Oleskandra Biliak | Hair and scalp service | `public/media/services/hair-scalp-care-detail.webp` | [Pexels](https://www.pexels.com/photo/a-hairdresser-combing-clients-hair-23349912/) |
+| `15507425` | Alina Skazka | Bridal and occasion service | `public/media/services/bridal-updo-detail.webp` | [Pexels](https://www.pexels.com/photo/close-up-shot-of-woman-s-hair-15507425/) |
+| `28868043` | Jonathan Borba | Personal consultation service | `public/media/services/consultation-colour-swatches.webp` | [Pexels](https://www.pexels.com/photo/person-choosing-hair-color-from-sample-palette-28868043/) |
+| `23349887` | Oleskandra Biliak | Lookbook texture reference | `public/media/gallery/wet-hair-texture-study.webp` | [Pexels](https://www.pexels.com/photo/a-hand-holding-wet-hair-23349887/) |
+| `4066506` | Alexander Krivitskiy | Homepage secondary editorial image | `public/media/hero/hero-inset-hair-texture.webp` | [Pexels](https://www.pexels.com/photo/shallow-focus-photo-of-hair-4066506/) |
+| `3356170` | Engin Akyurt | Homepage philosophy image | `public/media/services/precision-cut-detail.webp` | [Pexels](https://www.pexels.com/photo/person-cutting-hair-3356170/) |
+| `12464843` | Izzet Çakallı | Grooming service | `public/media/services/grooming-detail.webp` | [Pexels](https://www.pexels.com/photo/shaving-and-equipment-at-the-barbershop-12464843/) |
+| `3993442` | cottonbro studio | Lookbook haircut and journal preview | `public/media/gallery/editorial-cut-process.webp` | [Pexels](https://www.pexels.com/photo/woman-getting-a-haircut-3993442/) |
+| `29555682` | Doğan Alpaslan Demir | Lookbook colour-process reference and journal preview | `public/media/gallery/colour-process-reference.webp` | [Pexels](https://www.pexels.com/photo/professional-hair-coloring-session-in-salon-29555682/) |
+| `38530649` | Luis Morales Torres | Lookbook bridal and occasion inspiration | `public/media/gallery/bridal-updo-inspiration.webp` | [Pexels](https://www.pexels.com/photo/wedding-hairstyle-preparation-in-bright-room-38530649/) |
+| `32329615` | Bulat843 🌙 | Lookbook grooming reference | `public/media/gallery/grooming-cut-detail.webp` | [Pexels](https://www.pexels.com/photo/professional-haircut-at-modern-barbershop-32329615/) |
 
-These are direct CDN references. The creator, original asset page, asset-specific license/release details and acquisition date are not recorded; the CDN URL and a general platform license are not a substitute for that evidence.
+Every selected record links to the [Pexels License](https://www.pexels.com/license/) and has an acquisition date of 2026-11-25. The per-file derivative dimensions, alt text and intended placements are in `src/config/media.ts`. The selected stock photographs are not verified LAUXIRIO work and must remain visibly disclosed as illustrative.
+
+The seven Phase 4B derivatives were also downloaded from the original Pexels pages on 2026-11-25 and optimized locally. Their derivatives retain the source aspect ratio or use a deliberate crop for the displayed card. Original source dimensions, crop notes, intended placements and the visible-person/branding review are in the assessment table below. Temporary assessment copies of rejected candidates were not retained.
+
+## Phase 4B candidate assessment
+
+Fourteen original Pexels asset pages were reviewed on 2026-11-25. Original images were inspected before selection; all entries below link to the original page and the official [Pexels License](https://www.pexels.com/license/). A recorded platform license is not proof of model/property releases, trademark permissions or endorsement rights. Every selected derivative remains `licensed-review-pending`, with no third-party release evidence recorded.
+
+| Photo | Creator | Original page | License | Source dimensions | Placement evaluated | Visual / rights review | Decision |
+|---|---|---|---|---:|---|---|---|
+| `4066506` | Alexander Krivitskiy | [Pexels](https://www.pexels.com/photo/shallow-focus-photo-of-hair-4066506/) | [Pexels License](https://www.pexels.com/license/) | 4560 × 6000 | Homepage secondary editorial image | Warm, dark hair texture and negative space; original includes part of a face, excluded from the shipped crop. Model/property permissions are still unverified. | Selected; `licensed-review-pending` |
+| `3356170` | Engin Akyurt | [Pexels](https://www.pexels.com/photo/person-cutting-hair-3356170/) | [Pexels License](https://www.pexels.com/license/) | 6720 × 4480 | Homepage philosophy image | Precise scissors/comb detail; hands and client hair are visible, with no face in the crop. Any relevant model/property permissions remain unverified. | Selected; `licensed-review-pending` |
+| `12464843` | Izzet Çakallı | [Pexels](https://www.pexels.com/photo/shaving-and-equipment-at-the-barbershop-12464843/) | [Pexels License](https://www.pexels.com/license/) | 6000 × 4000 | Grooming service | Short-hair craft detail; the displayed crop excludes the barber's partial face. Client hair and hands remain visible; releases are not documented. | Selected; `licensed-review-pending` |
+| `3993442` | cottonbro studio | [Pexels](https://www.pexels.com/photo/woman-getting-a-haircut-3993442/) | [Pexels License](https://www.pexels.com/license/) | 3572 × 5358 | Lookbook haircut / journal preview | Dark, close process framing with no face in the crop. Client/stylist and salon-setting permissions remain unverified. | Selected; `licensed-review-pending` |
+| `29555682` | Doğan Alpaslan Demir | [Pexels](https://www.pexels.com/photo/professional-hair-coloring-session-in-salon-29555682/) | [Pexels License](https://www.pexels.com/license/) | 7728 × 5152 | Lookbook colour-process reference / journal preview | Foil placement and hands are visible; no face or legible brand is in the crop. This depicts a process, not a finished result. Releases and property permissions remain unverified. | Selected; `licensed-review-pending` |
+| `38530649` | Luis Morales Torres | [Pexels](https://www.pexels.com/photo/wedding-hairstyle-preparation-in-bright-room-38530649/) | [Pexels License](https://www.pexels.com/license/) | 3376 × 6000 | Lookbook bridal/occasion inspiration | Rear updo and stylist's hand; no face or visible logo in the selected crop. Model, wardrobe and property permissions remain unverified. | Selected; `licensed-review-pending` |
+| `32329615` | Bulat843 🌙 | [Pexels](https://www.pexels.com/photo/professional-haircut-at-modern-barbershop-32329615/) | [Pexels License](https://www.pexels.com/license/) | 1999 × 3553 | Lookbook grooming | Tight crop shows a short haircut and stylist's hand while excluding the barber's face. Client/property releases are not documented. | Selected; `licensed-review-pending` |
+| `34602190` | Caleb Oquendo | [Pexels](https://www.pexels.com/photo/elegant-bridal-hairstyle-with-butterfly-clips-34602190/) | [Pexels License](https://www.pexels.com/license/) | 3648 × 5472 | Lookbook bridal/occasion | Stylist's face is visible; butterfly clips and red wardrobe feel less aligned with the quiet-luxury direction. Separate releases are not documented. | Rejected |
+| `7752412` | Arina Krasnikova | [Pexels](https://www.pexels.com/photo/a-beautiful-woman-with-dyed-hair-7752412/) | [Pexels License](https://www.pexels.com/license/) | 4000 × 2670 | Lookbook colour | Identifiable profile and highly saturated pink hair; model-release evidence is absent and the colour treatment is not a fit. | Rejected |
+| `3993132` | cottonbro studio | [Pexels](https://www.pexels.com/photo/person-holding-a-stainless-steel-spoon-3993132/) | [Pexels License](https://www.pexels.com/license/) | 3928 × 5892 | Homepage/service colour process | Product packaging and possible trademarks are visible; it is from the same cottonbro salon series as `3993442`, so only one image from that series was selected. | Rejected |
+| `4981476` | Maria Geller | [Pexels](https://www.pexels.com/photo/close-up-shot-of-an-applying-hair-coloring-4981476/) | [Pexels License](https://www.pexels.com/license/) | 6000 × 4000 | Lookbook colour study | No face is visible, but the coral/red dye is unusually vivid for the natural, restrained palette. Rights releases remain unverified. | Rejected |
+| `14581433` | Trần Long | [Pexels](https://www.pexels.com/photo/hand-behind-sitting-woman-14581433/) | [Pexels License](https://www.pexels.com/license/) | 5304 × 7952 | Editorial styling | Identifiable client profile and strongly coloured wardrobe dominate; model-release evidence is absent and the frame is visually busy. | Rejected |
+| `17387800` | sergio carvajal | [Pexels](https://www.pexels.com/photo/beautiful-brunette-woman-with-hands-on-face-17387800/) | [Pexels License](https://www.pexels.com/license/) | 4000 × 6000 | Beauty editorial | Face-dominant makeup portrait with no hair-service context; model release is unverified and a face-free candidate was preferred. | Rejected |
+| `9146943` | Лена Gromakova | [Pexels](https://www.pexels.com/photo/interior-of-hairdresser-saloon-9146943/) | [Pexels License](https://www.pexels.com/license/) | 4032 × 3024 | Homepage/studio concept | Empty barbershop includes visible `UPPERCUT` branding and branded products. It could also be mistaken for LAUXIRIO's premises; not used. | Rejected |
+
+Pexels search-result thumbnails whose original asset pages returned 403 were not treated as verified candidates, downloaded or integrated. One unrelated search false-positive (`4076442`) was excluded after its official page described animal fur rather than human hair.
 
 ## Candidate source terms research
 
@@ -44,7 +67,7 @@ Official pages checked 2026-11-25. This is a sourcing checklist, not legal advic
 | [Unsplash License](https://unsplash.com/license) | The platform publishes a general license; use of a CDN image does not identify its original page or resolve model, property, trademark or endorsement concerns. | Original photo page, contributor, current terms, commercial context and any necessary releases. |
 | [Pexels License](https://www.pexels.com/license/) | Its official page allows free commercial use without required attribution, with restrictions including no implied endorsement and limits involving identifiable people/brands. | Original asset page, creator, consent/releases, trademarks, context and accurate attribution records for internal audit. |
 
-No asset from these sources was selected or downloaded. Free availability is not the same as clearance for a particular campaign or model/property release.
+Free availability is not the same as ownership, endorsement, or a separate model/property release. No stock artist portraits, campaign video, or actual-studio photographs have been selected.
 
 ## Registering approved files
 
@@ -52,7 +75,7 @@ For each approved item:
 
 1. Retain the original asset page, creator name, license terms/receipt, acquisition date, model/property release evidence where relevant, and owner approval.
 2. Record `src`, accurate alt text, intrinsic width/height, `creator`, `sourceUrl`, `licenseUrl`, `acquisitionDate`, all `intendedPlacement` values and an explicit approved status in `src/config/media.ts`.
-3. Use `approved-owned` only for LAUXIRIO-owned work with ownership/consent documented; use `approved-licensed` only after the actual asset's applicable license and releases are verified.
+3. Use `licensed-review-pending` when the source and platform-license record are present but model/property releases or other third-party permissions remain unverified. Use `approved-owned` or `approved-licensed` only after applicable ownership/license evidence and relevant releases/permissions are documented.
 4. Put optimized approved images under `public/media/{hero,studio,services,artists,gallery}/`; put approved MP4/WebM files under `public/media/video/`.
 5. Run `npm run audit:media`; investigate every error and review the local image on desktop and mobile before removing its placeholder disclosure.
 

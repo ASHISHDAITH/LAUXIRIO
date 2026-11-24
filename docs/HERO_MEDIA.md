@@ -4,7 +4,7 @@
 
 The homepage hero always renders its still-image poster. A video is optional and is enabled only when `NEXT_PUBLIC_LAUXIRIO_HERO_VIDEO_SRC` is configured. The video is muted, loops inline and fades in only after playback starts. If playback fails, the still image remains. It does not attempt autoplay when the visitor requests reduced motion or the browser reports data saver / 2G.
 
-The poster is prioritized and remains the image fallback across viewport sizes. The responsive image request is sized to the viewport; when a separately composed mobile crop is supplied, document and integrate it without removing the desktop poster or still fallback. There is currently no approved mobile-specific image or video file.
+The prioritized poster is `/media/hero/hero-stylist-detail.webp`, a locally optimized Pexels craft-detail image with a recorded platform-license URL. Separate model/property and third-party rights review is pending, so a visible notice identifies it as illustrative stock, not LAUXIRIO campaign work. The image is not an actual salon or client result. The responsive image request is sized to the viewport; when a separately composed mobile campaign crop is supplied, document and integrate it without removing the desktop poster or still fallback. There is currently no LAUXIRIO-owned mobile image or fully cleared campaign video.
 
 ## Enable a licensed campaign video
 
