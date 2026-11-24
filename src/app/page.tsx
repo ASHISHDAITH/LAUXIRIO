@@ -17,33 +17,51 @@ export default function Home() {
     <>
       <Preloader />
       <main id="top">
-        <section className="hero">
+        <section className="hero hero-editorial" aria-labelledby="hero-title">
           <div className="hero-photo" aria-hidden="true">
             <Image
-              src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1800&q=85"
+              src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2400&q=90"
               alt=""
               fill
               priority
               sizes="100vw"
+              quality={90}
             />
           </div>
           <div className="hero-grain" aria-hidden="true" />
-          <div className="hero-content">
-            <p className="eyebrow">Luxury hair & beauty · Unisex</p>
-            <h1>Beauty,<br /><em>considered.</em></h1>
-            <p className="hero-copy">An intimate salon for extraordinary hair, beauty and personal transformation.</p>
-            <div className="hero-actions">
-              <a className="primary-button" href="#booking">Book your appointment</a>
-              <a className="text-link" href="#services">Explore services <ArrowRight size={15} /></a>
-            </div>
-              <div className="hero-rail" aria-label="Salon highlights">
-                <span><strong>01</strong> artist-led</span>
-                <span><strong>02</strong> private ritual</span>
-                <span><strong>03</strong> lasting finish</span>
-              </div>
+          <div className="hero-vignette" aria-hidden="true" />
+          <div className="hero-editorial-index" aria-hidden="true">
+            <span>THE ART OF PERSONAL STYLE</span>
+            <span>EST. IN CRAFT · MADE FOR YOU</span>
           </div>
-          <div className="hero-3d" aria-hidden="true"><HeroScene /></div>
-          <a className="scroll-cue" href="#story" aria-label="Scroll to our story"><span>Discover</span><ArrowDown size={16} /></a>
+          <div className="hero-content">
+            <p className="eyebrow"><span className="hero-eyebrow-mark" /> Luxury hair, beauty & grooming <span className="hero-eyebrow-divider">/</span> Unisex</p>
+            <h1 id="hero-title">Beauty,<br /><em>considered.</em></h1>
+            <p className="hero-copy">A considered approach to hair, beauty and self-expression. Crafted around you, finished with intention.</p>
+            <div className="hero-actions">
+              <a className="primary-button" href="#booking">Reserve your experience <ArrowRight size={15} /></a>
+              <a className="text-link" href="#services">Discover the menu <ArrowDown size={14} /></a>
+            </div>
+          </div>
+          <div className="hero-visual" aria-hidden="true">
+            <div className="hero-visual-frame">
+              <Image
+                src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1100&q=88"
+                alt=""
+                fill
+                sizes="(max-width: 700px) 72vw, (max-width: 1100px) 48vw, 38vw"
+                quality={88}
+              />
+              <div className="hero-visual-shade" />
+              <span className="hero-visual-label">THE STUDIO / 001</span>
+            </div>
+            <span className="hero-visual-caption">A PLACE FOR YOUR NEXT CHAPTER</span>
+          </div>
+          <div className="hero-bottomline">
+            <div className="hero-bottom-note"><span>01</span><span>Considered craft</span></div>
+            <div className="hero-bottom-center">CUT · COLOUR · FORM · FINISH</div>
+            <a className="scroll-cue" href="#story" aria-label="Discover the Lauxirio philosophy"><span>Scroll to explore</span><ArrowDown size={15} /></a>
+          </div>
         </section>
 
         <section className="story section" id="story">
