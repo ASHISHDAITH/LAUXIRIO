@@ -87,3 +87,8 @@ npm run build
 npm run start
 npm run db:migrate
 ```
+
+
+## Homepage hero update
+
+The homepage uses a cinematic editorial composition: full-bleed salon photography, dark photographic grading, refined headline and clear appointment/menu actions, plus a framed secondary studio photograph. The oversized decorative 3D product bottle has been removed from the first screen so the salon and editorial imagery remain the focus. The secondary photograph is concept media; replace it with salon-owned or properly licensed campaign photography before launch and record its license in ASSET_REGISTER.md.
