@@ -1,6 +1,7 @@
 "use client";
 
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -34,13 +35,13 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
   return (
     <>
       <header className={scrolled ? "nav-wrap scrolled" : "nav-wrap"}>
-        <a className="brand" href="/" aria-label="Lauxirio home">LAUXIRIO</a>
+        <Link className="brand" href="/" aria-label="Lauxirio home">LAUXIRIO</Link>
         <nav className={menuOpen ? "nav-links open" : "nav-links"} aria-label="Main navigation">
           {links.map(([label, href]) => (
-            <a key={href} href={href} onClick={() => setMenuOpen(false)}>{label}</a>
+            <Link key={href} href={href} onClick={() => setMenuOpen(false)}>{label}</Link>
           ))}
         </nav>
-        <a className="nav-book" href="/booking">Book appointment</a>
+        <Link className="nav-book" href="/booking">Book appointment</Link>
         <button
           className="menu-button"
           type="button"
@@ -55,32 +56,29 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
       <footer id="contact">
         <div className="footer-main">
           <div>
-            <a className="brand footer-brand" href="/">LAUXIRIO</a>
-            <p>Beauty, considered differently.</p>
+            <Link className="brand footer-brand" href="/">LAUXIRIO</Link>
+            <p>Beauty, considered.</p>
           </div>
           <div className="footer-column">
-            <p>Visit</p>
-            <address>128 Atelier Avenue<br />Design District, New York</address>
+            <p>Studio</p>
+            <span>Location details will be published after verification.</span>
           </div>
           <div className="footer-column">
-            <p>Contact</p>
-            <a href="tel:+12125550148">+1 212 555 0148</a>
-            <a href="mailto:hello@lauxirio.com">hello@lauxirio.com</a>
-            <a href="https://wa.me/12125550148" target="_blank" rel="noreferrer"><Phone size={14} /> WhatsApp</a>
+            <p>Appointments</p>
+            <Link href="/booking">Request an appointment</Link>
+            <Link href="/contact">Contact information</Link>
           </div>
           <div className="footer-column">
             <p>Hours</p>
-            <span>Tuesday—Friday 09:30—19:30</span>
-            <span>Saturday 09:00—18:00</span>
-            <span>Sunday—Monday Closed</span>
+            <span>Schedule details will be published after verification.</span>
           </div>
         </div>
         <div className="footer-bottom">
           <span>© 2026 Lauxirio</span>
           <div>
-            <a href="/privacy">Privacy</a>
-            <a href="/booking">Booking information</a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">Instagram</a>
+            <Link href="/privacy">Privacy</Link>
+            <Link href="/booking">Booking information</Link>
+            <Link href="/journal">Journal</Link>
           </div>
         </div>
       </footer>

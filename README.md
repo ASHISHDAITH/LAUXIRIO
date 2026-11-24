@@ -1,40 +1,89 @@
 # Lauxirio
 
-Lauxirio is a responsive luxury unisex salon website built with Next.js, React, TypeScript and Tailwind CSS.
+A luxury, unisex salon website concept built with Next.js 16, React 19, TypeScript, Tailwind CSS 4 and React Three Fiber. The UI is intentionally transparent where verified business details and licensed campaign assets have not yet been supplied.
 
 ## Routes
 
-- `/` — cinematic homepage
-- `/about` — studio philosophy
-- `/services` — complete service menu
-- `/gallery` — editorial lookbook
-- `/artists` — artist directory
-- `/experience` — salon experience
-- `/booking` — appointment request
-- `/contact` — location and contact
-- `/journal` — beauty editorial
-- `/privacy` — privacy notice
+- `/` — editorial homepage
+- `/about`, `/services`, `/gallery`, `/artists`, `/experience`, `/journal`
+- `/booking` — appointment request with configured live availability
+- `/contact` — verified contact details will be added when supplied
+- `/privacy` — booking data summary
+- `/admin` — token-protected salon request management
+- `/api/appointments` — appointment options, availability and submissions
+- `/api/admin/appointments` — authenticated request management API
 
 ## Development
 
-```bash
+Requirements: Node.js 20.9+ and a PostgreSQL-compatible database.
+
+```powershell
+Copy-Item .env.example .env
 npm install
+npm run db:migrate
 npm run dev
 ```
 
-Open `http://localhost:3000`.
+Configure `.env` before migrating. Use a PostgreSQL provider/database you control; no vendor is selected by this project. Hosting prices, connection limits, backups, data residency and free-tier terms depend on that provider. A local PostgreSQL instance may be used for development.
 
-## Production
+Required environment variables:
 
-```bash
-npm run build
-npm run start
+- `DATABASE_URL` — server-only Postgres connection string
+- `SALON_LOCATIONS_JSON` — verified location IDs and public labels
+- `SALON_STYLISTS_JSON` — verified stylist IDs and public labels
+- `SALON_WEEKLY_AVAILABILITY_JSON` — actual weekly appointment start times keyed by ISO weekday (`1` Monday through `7` Sunday); values use 24-hour `HH:mm`
+- `SALON_SERVICE_DURATION_MINUTES_JSON` — verified service durations in minutes, keyed by every configured service ID
+- `SALON_TIME_ZONE` — verified IANA timezone for the salon's date and opening schedule
+- `ADMIN_API_TOKEN` — random secret of at least 32 characters for `/admin`
+
+Optional:
+
+- `NEXT_PUBLIC_SITE_URL` — canonical production origin, set before building for sitemap and metadata URLs
+- `RESEND_API_KEY`, `SALON_NOTIFICATION_EMAIL`, `EMAIL_FROM` — all three are required to send salon-side email notifications
+
+Example configuration **format only** (do not copy unverified location, staff or opening hours into production):
+
+```dotenv
+SALON_LOCATIONS_JSON=[{"id":"verified-location-id","label":"Verified public location"}]
+SALON_STYLISTS_JSON=[{"id":"verified-stylist-id","label":"Verified stylist name"}]
+SALON_WEEKLY_AVAILABILITY_JSON={"1":["09:30","11:00"],"2":["09:30","11:00"]}
+SALON_SERVICE_DURATION_MINUTES_JSON={"signature-cut":60,"dimensional-colour":90,"hair-scalp-ritual":60,"grooming-ritual":45,"bridal-beauty":120,"consultation":30}
+SALON_TIME_ZONE=Area/City
 ```
 
-## Booking status
+The duration values above are format examples only; replace them with verified service durations. Availability checks and admin confirmation prevent overlapping confirmed appointments using those configured durations.
 
-The appointment form submits a validated server-side request to `POST /api/appointments`. For local development, requests are stored in `.data/appointments.json`. This is not a production database or live availability provider. Submitted requests remain pending until confirmed by the salon. Before production, connect it to a supported booking provider or a validated server-side endpoint and configure slot availability, cancellation rules and confirmation emails.
+Generate a strong admin token locally:
 
-## Content status
+```powershell
+node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
+```
 
-Business names, artist profiles, addresses, prices, hours and images are concept content and replaceable placeholders. They must be reviewed and replaced with approved salon information and licensed owned imagery before launch.
+Never commit `.env` or paste secret values into source files. Admin access uses a bearer token held only in the current `/admin` page session; the API compares it server-side.
+
+## Appointment workflow
+
+1. Booking options come only from the salon's configured locations and stylist roster.
+2. Available times are derived from configured weekly openings in the salon's configured IANA timezone minus confirmed database appointments. No demo times are presented as live availability.
+3. The server validates the chosen date, time, location, stylist and service and persists a pending request in PostgreSQL.
+4. The salon reviews requests at `/admin` and can confirm or cancel them. Confirmations are serialized per stylist, checked against existing appointment durations across locations, and protected against duplicate exact slots by a database unique index. The customer is told that a request is pending, not booked.
+5. Idempotency keys and an active-customer/slot constraint guard retries and duplicate requests.
+
+Apply schema changes with `npm run db:migrate`. The migration is safe to rerun; if upgrading a database with appointments created before service durations were stored, set a verified duration for each existing row before rerunning. Database backups, access control, encryption in transit/at rest and legally appropriate retention/deletion policies must be configured with the chosen database provider. This code does not automatically delete personal data.
+
+Email is optional and uses the Resend REST API only when all three email variables are present. The integration sends new-request notifications to the salon, not appointment confirmations to customers. The pricing page currently lists a Free tier ($0, up to 3,000 transactional emails/month and 100/day) and Pro at $20/month for 50,000; verify current terms before adoption: [Resend pricing](https://resend.com/pricing) (checked 2026-11-24). Email delivery is not required for database persistence.
+
+## Media and content readiness
+
+Current Unsplash image URLs are unverified editorial placeholders, not approved Lauxirio campaign/staff photography. See [ASSET_REGISTER.md](./ASSET_REGISTER.md). The 3D hero is procedural and falls back on reduced-motion, narrow-screen and WebGL-unavailable contexts.
+
+Salon address, telephone, email, public hours, staff identities, service durations/prices and production domain were not provided. They are intentionally not invented or emitted as HairSalon structured data. Set verified operational configuration before launch. The repository has no `LICENSE`; choose a license before reusing or distributing its code.
+
+## Commands
+
+```powershell
+npm run lint
+npm run build
+npm run start
+npm run db:migrate
+```

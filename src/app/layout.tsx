@@ -15,11 +15,12 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lauxirio.example"),
+  ...(process.env.NEXT_PUBLIC_SITE_URL
+    ? { metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL) }
+    : {}),
   title: "Lauxirio | Luxury Hair & Beauty",
   description:
     "A premium unisex salon experience for elevated hair, beauty and grooming.",
-  alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   openGraph: {
     title: "Lauxirio | Luxury Hair & Beauty",
@@ -32,40 +33,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${dmSans.variable} ${cormorant.variable}`}>
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "HairSalon",
-              name: "Lauxirio",
-              description: "Luxury unisex hair and beauty studio.",
-              telephone: "+1-212-555-0148",
-              email: "hello@lauxirio.com",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "128 Atelier Avenue",
-                addressLocality: "New York",
-                addressRegion: "NY",
-                addressCountry: "US",
-              },
-              openingHoursSpecification: [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday"],
-                  opens: "09:30",
-                  closes: "19:30",
-                },
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: "Saturday",
-                  opens: "09:00",
-                  closes: "18:00",
-                },
-              ],
-            }),
-          }}
-        />
         <SiteChrome>{children}</SiteChrome>
       </body>
     </html>

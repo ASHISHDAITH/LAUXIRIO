@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Environment, Float, MeshTransmissionMaterial } from "@react-three/drei";
+import { Float, MeshTransmissionMaterial } from "@react-three/drei";
 import { useRef, useState } from "react";
 import type { Group } from "three";
 
@@ -45,7 +45,8 @@ function SculpturalBottle() {
           <cylinderGeometry args={[1.05, 1.18, 2.72, 64]} />
           <MeshTransmissionMaterial
             backside
-            samples={4}
+            samples={2}
+            resolution={128}
             thickness={0.18}
             transmission={0.68}
             roughness={0.08}
@@ -65,15 +66,15 @@ function SculpturalBottle() {
 export default function BeautyScene() {
   return (
     <Canvas
-      dpr={[1, 1.5]}
+      dpr={[1, 1.25]}
       camera={{ position: [0, 0.2, 7], fov: 36 }}
       gl={{ antialias: true, alpha: true }}
+      fallback={<div className="scene-fallback" aria-hidden="true"><span /></div>}
     >
       <ambientLight intensity={1.1} />
       <directionalLight position={[4, 6, 5]} intensity={3.2} castShadow />
       <pointLight position={[-4, 1, 3]} intensity={12} color="#c5a477" />
       <SculpturalBottle />
-      <Environment preset="city" />
     </Canvas>
   );
 }

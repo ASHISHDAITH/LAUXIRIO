@@ -1,13 +1,37 @@
-# Media Register
+# Media Asset Register
 
-The current build uses externally hosted Unsplash placeholder photography. It is replaceable concept media and must not be presented as photography of the real Lauxirio business or staff.
+## Current references
 
-Before launch:
+The following are remotely loaded Unsplash CDN references already present in the concept website. They have **not** been downloaded, individually attributed or cleared as approved campaign/staff media. Direct CDN URLs do not identify creators. Until individually reviewed and replaced/approved, treat them as development placeholders and do not claim they depict Lauxirio, its premises or employees.
 
-1. Replace campaign, service, gallery and artist images with licensed or owned media.
-2. Record each downloaded asset's source, creator, license URL, download date and intended use.
-3. Save approved files locally in `public/media/` and use responsive `next/image` variants.
-4. Replace the procedural 3D hero with a licensed campaign video only when performance and asset quality are approved.
-5. Do not copy campaign work or branding from any reference salon.
+Source base for each reference: `https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w={SIZE}&q=85`
+License reference: [Unsplash License](https://unsplash.com/license) — the license and any applicable restrictions have not been independently reviewed per image.
+Acquisition date: Not acquired (remote URL reference). Code references were present in commit `a6fee2d` on 2026-11-24.
 
-No paid or competitor campaign media is included in this implementation.
+| Asset identifier | Creator | License status | Intended use |
+|---|---|---|---|
+| `photo-1560066984-138dadb4c035` | Unknown from CDN URL | Unverified; placeholder | Hero, service list |
+| `photo-1522337360788-8b13dee7a37e` | Unknown from CDN URL | Unverified; placeholder | Service list |
+| `photo-1487412947147-5cebf100ffc2` | Unknown from CDN URL | Unverified; placeholder | Service list |
+| `photo-1527799820374-dcf8d9d4a388` | Unknown from CDN URL | Unverified; placeholder | Service list |
+| `photo-1503951914875-452162b0f3f1` | Unknown from CDN URL | Unverified; placeholder | Grooming service and gallery |
+| `photo-1519741497674-611481863552` | Unknown from CDN URL | Unverified; placeholder | Bridal service |
+| `photo-1562322140-8baeececf3df` | Unknown from CDN URL | Unverified; placeholder | Gallery and lookbook |
+| `photo-1526047932273-341f2a7631f9` | Unknown from CDN URL | Unverified; placeholder | Gallery and lookbook |
+| `photo-1488426862026-3ee34a7d66df` | Unknown from CDN URL | Unverified; placeholder | Gallery and lookbook |
+| `photo-1633681926022-84c23e8cb2d6` | Unknown from CDN URL | Unverified; placeholder | Gallery and lookbook |
+| `photo-1524504388940-b1c1722653e1` | Unknown from CDN URL | Unverified; placeholder | Gallery and lookbook |
+| `photo-1494790108377-be9c29b29330` | Unknown from CDN URL | Unverified; placeholder | Illustrative artist-directory portrait |
+| `photo-1500648767791-00dcc994a43e` | Unknown from CDN URL | Unverified; placeholder | Illustrative artist-directory portrait |
+| `photo-1534528741775-53994a69daeb` | Unknown from CDN URL | Unverified; placeholder | Illustrative artist-directory portrait |
+| `photo-1560869713-7d0a29430803` | Unknown from CDN URL | Unverified; placeholder | Studio story |
+
+## Replacement process
+
+1. Obtain original Lauxirio-owned or properly licensed salon, service and staff photography/video.
+2. Record the local filename, source page, creator, license/receipt, acquisition date and intended placements before publishing.
+3. Store approved, optimized files under `public/media/hero/`, `studio/`, `services/`, `artists/`, `gallery/` or `video/`.
+4. Update the image references in the corresponding component and this register.
+5. Never use another salon's campaign, logo, lookbook or proprietary content. Do not remove watermarks or bypass paywalls.
+
+No campaign video has been added. No paid asset has been acquired.
