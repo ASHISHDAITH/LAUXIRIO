@@ -1,6 +1,6 @@
 # LAUXIRIO media shot list
 
-Phase 4 added seven optimized, free-source Pexels images as clearly disclosed illustrative references; they are not LAUXIRIO campaign work, studio photography, staff, or client results. Fifteen of the 22 configured image placements remain unverified placeholders. No paid assets were acquired. Use the existing `public/media/` directories and record provenance in `src/config/media.ts` and `ASSET_REGISTER.md`.
+Phase 4 added seven optimized, free-source Pexels images as clearly disclosed illustrative references. Their source and platform-license records are present, but separate model/property release and third-party rights reviews are pending; they are not approved for final production use or LAUXIRIO campaign work, studio photography, staff, or client results. Fifteen of the 22 configured image placements remain unverified placeholders. No paid assets were acquired. Use the existing `public/media/` directories and record provenance in `src/config/media.ts` and `ASSET_REGISTER.md`.
 
 | Area | Required shot | Direction / required evidence | Status |
 |---|---|---|---|

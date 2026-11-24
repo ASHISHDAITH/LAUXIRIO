@@ -50,7 +50,7 @@
 
 ## Phase 4 free-source media
 
-- Added seven verified Pexels photos as locally optimized WebP references with creator, source page, license, acquisition date, dimensions, alt text, intended placement and `approved-licensed` status.
+- Added seven Pexels photos as locally optimized WebP references with creator, source page, platform-license URL, acquisition date, dimensions, alt text and intended placement. Separate model/property releases and other third-party permissions remain unverified; assets are `licensed-review-pending`, not final production-approved.
 - Kept the assets illustrative and added visible hero, service and lookbook disclosures; no stock image is described as LAUXIRIO work, a real client result, a staff member or the actual studio.
 - Fifteen placements remain unverified, including artist portraits, most lookbook imagery, the secondary hero image and studio imagery. No paid assets or video were added.
 - Run `npm run audit:media`; current counts and any remaining remote duplicates are in `docs/MEDIA_AUDIT.md`.

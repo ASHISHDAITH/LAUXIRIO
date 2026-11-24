@@ -9,9 +9,12 @@ const reportPath = path.join(root, "docs", "MEDIA_AUDIT.md");
 const acceptedStatuses = new Set([
   "approved-owned",
   "approved-licensed",
+  "licensed-review-pending",
   "unverified-placeholder",
 ]);
 const approvedStatuses = new Set(["approved-owned", "approved-licensed"]);
+const rightsReviewPendingStatuses = new Set(["licensed-review-pending"]);
+const localMediaStatuses = new Set([...approvedStatuses, ...rightsReviewPendingStatuses]);
 const requiredMetadata = [
   ["creator", "creator"],
   ["sourceUrl", "source page"],
@@ -145,6 +148,7 @@ async function inspectAssets() {
 
   const duplicateSources = new Map();
   const approvedAssets = [];
+  const rightsReviewPendingAssets = [];
   const placeholders = [];
   const metadataGaps = new Map();
 
@@ -198,8 +202,8 @@ async function inspectAssets() {
       if (source && source.protocol !== "https:") {
         errors.push(`${assetId}: external media must use HTTPS.`);
       }
-      if (approvedStatuses.has(asset.status)) {
-        errors.push(`${assetId}: approved media must use a local /media/ path.`);
+      if (localMediaStatuses.has(asset.status)) {
+        errors.push(`${assetId}: licensed or approved media must use a local /media/ path.`);
       }
       if (source) {
         const key = `${source.host}${source.pathname}`;
@@ -212,6 +216,14 @@ async function inspectAssets() {
     if (asset.status === "unverified-placeholder") {
       placeholders.push({ location, asset });
       if (missing.length) metadataGaps.set(assetId, missing);
+    } else if (rightsReviewPendingStatuses.has(asset.status)) {
+      rightsReviewPendingAssets.push({ location, asset });
+      if (missing.length) {
+        errors.push(`${assetId}: rights-review-pending media is missing ${missing.join(", ")}.`);
+      }
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(asset.acquisitionDate ?? "")) {
+        errors.push(`${assetId}: acquisitionDate must be YYYY-MM-DD.`);
+      }
     } else if (approvedStatuses.has(asset.status)) {
       approvedAssets.push({ location, asset });
       if (missing.length) errors.push(`${assetId}: approved asset is missing ${missing.join(", ")}.`);
@@ -228,7 +240,14 @@ async function inspectAssets() {
     );
   }
 
-  return { approvedAssets, placeholders, metadataGaps, duplicateSources, counters };
+  return {
+    approvedAssets,
+    rightsReviewPendingAssets,
+    placeholders,
+    metadataGaps,
+    duplicateSources,
+    counters,
+  };
 }
 
 async function inspectHeroVideo() {
@@ -253,6 +272,7 @@ async function inspectHeroVideo() {
 
 function createReport({
   approvedAssets,
+  rightsReviewPendingAssets,
   placeholders,
   metadataGaps,
   duplicateSources,
@@ -263,7 +283,13 @@ function createReport({
   const missingSource = [...metadataGaps.values()].filter((fields) => fields.includes("source page")).length;
   const missingLicense = [...metadataGaps.values()].filter((fields) => fields.includes("license record")).length;
   const missingAcquisitionDate = [...metadataGaps.values()].filter((fields) => fields.includes("acquisition date")).length;
-  const ready = errors.length === 0 && placeholders.length === 0;
+  const platformLicenseRecords = assets.filter(
+    ({ asset }) => !isMissing(asset.sourceUrl) && !isMissing(asset.licenseUrl),
+  ).length;
+  const ready =
+    errors.length === 0 &&
+    placeholders.length === 0 &&
+    rightsReviewPendingAssets.length === 0;
   const lines = [
     "# Media audit report",
     "",
@@ -271,12 +297,14 @@ function createReport({
     "",
     `**Production media status: ${ready ? "READY" : "NOT READY"}**`,
     "",
-    "This report does not grant or verify rights. Placeholder records are intentionally not treated as approved.",
+    "This audit checks recorded source/license URLs and local files; it does not determine legal rights. Platform-license records and model/property rights review are reported separately.",
     "",
     "## Summary",
     "",
     `- Media entries inspected: ${assets.length}`,
     `- Approved assets: ${approvedAssets.length}`,
+    `- Assets with source and platform-license URLs recorded: ${platformLicenseRecords}`,
+    `- Assets pending model/property or other third-party rights review: ${rightsReviewPendingAssets.length}`,
     `- Unverified placeholders: ${placeholders.length}`,
     `- Missing creator: ${missingCreator}`,
     `- Missing source page: ${missingSource}`,
@@ -293,14 +321,36 @@ function createReport({
     "",
     "## Configured image entries",
     "",
-    "| Asset ID | Status | Source | Dimensions | Alt | Creator | Source page | License record | Acquired | Placement |",
-    "|---|---|---|---|---|---|---|---|---|---|",
+    "| Asset ID | Status | Source | Dimensions | Alt | Creator | Source page | Platform license URL | Rights review | Acquired | Placement |",
+    "|---|---|---|---|---|---|---|---|---|---|---|",
   ];
 
   for (const { location, asset } of assets) {
+    const rightsReview = rightsReviewPendingStatuses.has(asset.status)
+      ? "Pending"
+      : approvedStatuses.has(asset.status)
+        ? "Approved in record"
+        : "Not reviewed";
     lines.push(
-      `| ${escapeTable(asset.id || location)} | ${escapeTable(asset.status)} | ${escapeTable(asset.src)} | ${asset.width ?? "Missing"} x ${asset.height ?? "Missing"} | ${isMissing(asset.alt) ? "Missing" : "Present"} | ${escapeTable(asset.creator || "Missing")} | ${escapeTable(asset.sourceUrl || "Missing")} | ${escapeTable(asset.licenseUrl || "Missing")} | ${escapeTable(asset.acquisitionDate || "Missing")} | ${escapeTable((asset.intendedPlacement ?? []).join("; ") || "Missing")} |`,
+      `| ${escapeTable(asset.id || location)} | ${escapeTable(asset.status)} | ${escapeTable(asset.src)} | ${asset.width ?? "Missing"} x ${asset.height ?? "Missing"} | ${isMissing(asset.alt) ? "Missing" : "Present"} | ${escapeTable(asset.creator || "Missing")} | ${escapeTable(asset.sourceUrl || "Missing")} | ${escapeTable(asset.licenseUrl || "Missing")} | ${rightsReview} | ${escapeTable(asset.acquisitionDate || "Missing")} | ${escapeTable((asset.intendedPlacement ?? []).join("; ") || "Missing")} |`,
     );
+  }
+
+  lines.push("", "## Pending rights-review records", "");
+  if (rightsReviewPendingAssets.length === 0) {
+    lines.push("None.");
+  } else {
+    lines.push(
+      "The platform-license and source URLs are recorded; separate model/property releases and other third-party permissions have not been verified. These assets are not approved for final production use.",
+      "",
+      "| Asset ID | Platform license URL | Pending review | Placement |",
+      "|---|---|---|---|",
+    );
+    for (const { location, asset } of rightsReviewPendingAssets) {
+      lines.push(
+        `| ${escapeTable(asset.id || location)} | ${escapeTable(asset.licenseUrl || "Missing")} | Model/property releases and other third-party permissions | ${escapeTable((asset.intendedPlacement ?? []).join("; "))} |`,
+      );
+    }
   }
 
   lines.push("", "## Unverified asset records", "");
@@ -331,18 +381,24 @@ function createReport({
   if (!heroVideo.source) lines.push("- No video file is configured; the existing still-image fallback remains active.");
 
   lines.push("", "## Findings", "");
-  if (!errors.length && !warnings.length && !placeholders.length) {
+  if (
+    !errors.length &&
+    !warnings.length &&
+    !placeholders.length &&
+    !rightsReviewPendingAssets.length
+  ) {
     lines.push("No audit findings.");
   } else {
     if (errors.length) {
       lines.push("### Errors", "", ...errors.map((error) => `- ${error}`), "");
     }
-    if (placeholders.length || metadataGaps.size) {
+    if (placeholders.length || metadataGaps.size || rightsReviewPendingAssets.length) {
       lines.push(
         "### Production blockers",
         "",
+        `- ${rightsReviewPendingAssets.length} licensed entries await separate model/property and third-party rights review.`,
         `- ${placeholders.length} placeholder entries have not been approved.`,
-        `- ${metadataGaps.size} placeholder entries lack one or more creator, source-page, license-record or acquisition-date fields.`,
+        `- ${metadataGaps.size} placeholder entries lack one or more creator, source-page, platform-license or acquisition-date fields.`,
         "",
       );
     }
@@ -353,7 +409,7 @@ function createReport({
 
   lines.push(
     "",
-    "The audit exits with code 1 while any placeholder or structural error remains. Supply and review approved media, add complete provenance, then run `node scripts/audit-media.mjs` again.",
+    "The audit exits with code 1 while any placeholder, pending rights review or structural error remains. Complete any separate rights clearance, update each status only when supported by evidence, and run `node scripts/audit-media.mjs` again.",
     "",
   );
   return lines.join("\n");
@@ -367,7 +423,13 @@ async function main() {
   console.log(report);
   console.log(`\nWrote ${path.relative(root, reportPath)}.`);
 
-  if (errors.length || result.placeholders.length) process.exitCode = 1;
+  if (
+    errors.length ||
+    result.placeholders.length ||
+    result.rightsReviewPendingAssets.length
+  ) {
+    process.exitCode = 1;
+  }
 }
 
 await main();

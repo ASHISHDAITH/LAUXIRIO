@@ -1,6 +1,7 @@
 export type MediaStatus =
   | "approved-owned"
   | "approved-licensed"
+  | "licensed-review-pending"
   | "unverified-placeholder";
 
 export type MediaImage = {
@@ -43,7 +44,7 @@ function placeholderImage(
   };
 }
 
-function licensedPexelsImage(
+function pexelsStockImage(
   photoId: string,
   fileName: string,
   width: number,
@@ -64,13 +65,13 @@ function licensedPexelsImage(
     licenseUrl: PEXELS_LICENSE_URL,
     acquisitionDate: MEDIA_ACQUISITION_DATE,
     intendedPlacement,
-    status: "approved-licensed",
+    status: "licensed-review-pending",
   };
 }
 
 export const media = {
   hero: {
-    poster: licensedPexelsImage(
+    poster: pexelsStockImage(
       "6487888",
       "hero/hero-stylist-detail.webp",
       2400,
@@ -97,7 +98,7 @@ export const media = {
     ["Homepage philosophy section"],
   ),
   services: {
-    signatureCut: licensedPexelsImage(
+    signatureCut: pexelsStockImage(
       "6503332",
       "services/signature-cut-process.webp",
       1200,
@@ -107,7 +108,7 @@ export const media = {
       "https://www.pexels.com/photo/close-up-photo-of-person-combing-a-hair-6503332/",
       ["Service menu: signature cut"],
     ),
-    dimensionalColour: licensedPexelsImage(
+    dimensionalColour: pexelsStockImage(
       "6391646",
       "services/dimensional-colour-curls.webp",
       1200,
@@ -117,7 +118,7 @@ export const media = {
       "https://www.pexels.com/photo/a-back-view-of-a-woman-in-denim-jacket-with-a-curly-hair-6391646/",
       ["Service menu: dimensional colour"],
     ),
-    hairScalpRitual: licensedPexelsImage(
+    hairScalpRitual: pexelsStockImage(
       "23349912",
       "services/hair-scalp-care-detail.webp",
       1200,
@@ -134,7 +135,7 @@ export const media = {
       "Grooming concept",
       ["Service menu: grooming"],
     ),
-    bridal: licensedPexelsImage(
+    bridal: pexelsStockImage(
       "15507425",
       "services/bridal-updo-detail.webp",
       1200,
@@ -144,7 +145,7 @@ export const media = {
       "https://www.pexels.com/photo/close-up-shot-of-woman-s-hair-15507425/",
       ["Service menu: bridal and occasion"],
     ),
-    consultation: licensedPexelsImage(
+    consultation: pexelsStockImage(
       "28868043",
       "services/consultation-colour-swatches.webp",
       1200,
@@ -218,7 +219,7 @@ export const media = {
       label: "Texture",
       categories: ["Texture", "Styling", "Editorial"],
       orientation: "portrait",
-      image: licensedPexelsImage(
+      image: pexelsStockImage(
         "23349887",
         "gallery/wet-hair-texture-study.webp",
         1000,

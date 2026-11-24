@@ -39,12 +39,12 @@
 ## Phase 4 media update
 
 - Seven Pexels images were converted to local WebP files; the remaining placements are intentionally unverified placeholders and no hero video is configured.
-- `npm.cmd run audit:media` — regenerated `docs/MEDIA_AUDIT.md`; it exits with code 1 by design because 15 unverified placeholders remain. The audit found 7 approved-licensed assets, 0 structural errors, 0 broken local files, 3 repeated remote sources and no configured hero video.
+- `npm.cmd run audit:media` — regenerated `docs/MEDIA_AUDIT.md`; it exits with code 1 because 7 assets await third-party rights review and 15 unverified placeholders remain. The audit found 0 approved assets, 7 source/platform-license URL records, 0 structural errors, 0 broken local files, 3 repeated remote sources and no configured hero video.
 - `npm.cmd run lint` — passed.
 - `npm.cmd run build` — passed with TypeScript checks and static page generation.
 - Responsive browser checks at 1440×900, 768×1024 and 390×844 — all seven local WebP images loaded at each size, the stock disclosure was visible, and none of the viewports had horizontal overflow. The desktop and mobile hero layouts were also reviewed by screenshot.
 - The homepage availability request returned the expected HTTP 503 because salon/database configuration is not present; booking APIs and forms were not changed.
-- No production photography, model/property release records, or hero video were supplied; the Pexels images remain illustrative and must not be presented as LAUXIRIO work.
+- No production photography, model/property release records, or hero video were supplied; the Pexels images remain pending rights review, illustrative only, and must not be presented as LAUXIRIO work.
 
 ## Launch gate
 

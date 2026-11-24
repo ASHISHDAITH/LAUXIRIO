@@ -2,13 +2,13 @@
 
 ## Readiness
 
-The media catalog contains seven `approved-licensed` Pexels stock references stored as optimized local WebP files and 15 `unverified-placeholder` placements. “Approved-licensed” means the recorded Pexels license permits the stated commercial website use; it does not mean the stock depicts LAUXIRIO, is endorsed by its subjects, or is an official campaign result. The selected crops show hair/process detail without visible faces or third-party branding. Do not repurpose them as staff, client results, or actual studio photography. No paid asset or subscription has been acquired.
+The media catalog contains seven `licensed-review-pending` Pexels stock references stored as optimized local WebP files and 15 `unverified-placeholder` placements. Their source pages and Pexels platform-license URL are recorded, but separate model/property releases and other third-party permissions have not been verified. These assets are not approved for final production use. They do not depict LAUXIRIO, constitute official campaign results, or imply endorsement. Do not repurpose them as staff, client results, or actual studio photography. No paid asset or subscription has been acquired.
 
 The canonical per-placement metadata is in [`src/config/media.ts`](./src/config/media.ts). Run `npm run audit:media` to regenerate [`docs/MEDIA_AUDIT.md`](./docs/MEDIA_AUDIT.md). Fifteen placeholders remain, including the artist portraits, studio imagery, grooming, and most lookbook placements. No real LAUXIRIO campaign, team, client-result, or studio media has been supplied; the optional campaign video remains unconfigured.
 
 ## Selected free-source stock references
 
-Each item is an illustrative reference only. Pexels permits free commercial use without required attribution; creator names are retained here as provenance. The selected crops emphasize hair and process details without visible faces. No separate model/property release documents are held, so keep the visible stock disclosures in place and do not imply endorsement.
+Each item is an illustrative reference only. Pexels' platform license is recorded for the free commercial-use terms; creator names are retained as provenance. Platform permission is distinct from full rights clearance. No separate model/property release documents or other third-party permission records are held, so keep the visible stock disclosures in place and do not imply endorsement.
 
 | Pexels photo | Creator | Placement | Local optimized file | Original asset page |
 |---|---|---|---|---|
@@ -20,7 +20,7 @@ Each item is an illustrative reference only. Pexels permits free commercial use 
 | `28868043` | Jonathan Borba | Personal consultation service | `public/media/services/consultation-colour-swatches.webp` | [Pexels](https://www.pexels.com/photo/person-choosing-hair-color-from-sample-palette-28868043/) |
 | `23349887` | Oleskandra Biliak | Lookbook texture reference | `public/media/gallery/wet-hair-texture-study.webp` | [Pexels](https://www.pexels.com/photo/a-hand-holding-wet-hair-23349887/) |
 
-All seven use the [Pexels License](https://www.pexels.com/license/) and were acquired on 2026-11-25. The per-file metadata, exact dimensions, alt text and intended placements are in `src/config/media.ts`. The selected stock photographs are not verified LAUXIRIO work and must remain visibly disclosed as illustrative.
+All seven records link to the [Pexels License](https://www.pexels.com/license/) and were acquired on 2026-11-25. The per-file metadata, exact dimensions, alt text and intended placements are in `src/config/media.ts`. The selected stock photographs are not verified LAUXIRIO work and must remain visibly disclosed as illustrative.
 
 ## Candidate source terms research
 
@@ -43,7 +43,7 @@ For each approved item:
 
 1. Retain the original asset page, creator name, license terms/receipt, acquisition date, model/property release evidence where relevant, and owner approval.
 2. Record `src`, accurate alt text, intrinsic width/height, `creator`, `sourceUrl`, `licenseUrl`, `acquisitionDate`, all `intendedPlacement` values and an explicit approved status in `src/config/media.ts`.
-3. Use `approved-owned` only for LAUXIRIO-owned work with ownership/consent documented; use `approved-licensed` only after the actual asset's applicable license and releases are verified.
+3. Use `licensed-review-pending` when the source and platform-license record are present but model/property releases or other third-party permissions remain unverified. Use `approved-owned` or `approved-licensed` only after applicable ownership/license evidence and relevant releases/permissions are documented.
 4. Put optimized approved images under `public/media/{hero,studio,services,artists,gallery}/`; put approved MP4/WebM files under `public/media/video/`.
 5. Run `npm run audit:media`; investigate every error and review the local image on desktop and mobile before removing its placeholder disclosure.
 
