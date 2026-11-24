@@ -40,3 +40,12 @@
 - No production mail was sent.
 - No stock image has been individually cleared as official Lauxirio media.
 - No deployment has been run.
+
+## Phase 3 media readiness
+
+- Added explicit asset provenance/status fields to `src/config/media.ts` while retaining all existing image references as `unverified-placeholder`.
+- Added `scripts/audit-media.mjs` and the `npm run audit:media` command; it checks local image/video paths, alt text, declared dimensions, status and provenance fields, and writes `docs/MEDIA_AUDIT.md`.
+- Added a complete media shot list, creative direction, source-term research notes and owner acquisition/approval guidance.
+- No image or video was downloaded or purchased; no hero video is configured.
+- The generated audit found 22 unverified image placements, zero approved assets, six repeated remote source images, zero broken local media paths and no configured hero video. Creator/source/license/acquisition metadata is missing for all 22 placements.
+- Owner still needs to supply or approve the real campaign, service, lookbook, staff/process and studio media listed in `docs/MEDIA_SHOT_LIST.md`, plus asset-specific rights/release records. See `docs/MEDIA_AUDIT.md` for current findings.

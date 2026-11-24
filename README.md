@@ -76,7 +76,7 @@ Email is optional and uses the Resend REST API only when all three email variabl
 
 ## Media and content readiness
 
-Current Unsplash image URLs are unverified editorial placeholders, not approved Lauxirio campaign/staff photography. Image metadata is centralized in `src/config/media.ts`, service and editorial copy in `src/config/content.ts`, and the source/license register is [ASSET_REGISTER.md](./ASSET_REGISTER.md). Placeholder notices remain visible until approved media is supplied. The 3D hero is procedural and falls back on reduced-motion, narrow-screen and WebGL-unavailable contexts.
+Current Unsplash image URLs are unverified editorial placeholders, not approved LAUXIRIO campaign/staff photography. Image metadata and explicit approval status are centralized in `src/config/media.ts`; page copy remains in `src/config/content.ts`. The source/license register is [ASSET_REGISTER.md](./ASSET_REGISTER.md), the requested deliverables are in [docs/MEDIA_SHOT_LIST.md](./docs/MEDIA_SHOT_LIST.md), and the creative guidance is in [docs/MEDIA_ART_DIRECTION.md](./docs/MEDIA_ART_DIRECTION.md). Run `npm run audit:media` to check local paths, metadata and video configuration; the current report is [docs/MEDIA_AUDIT.md](./docs/MEDIA_AUDIT.md). No approved media is present, and the optional hero video remains unconfigured. Placeholder notices remain until approved replacements exist and load correctly.
 
 Salon address, telephone, email, public hours, staff identities, service durations/prices and production domain were not provided. They are intentionally not invented or emitted as HairSalon structured data. Set verified operational configuration before launch. The repository has no `LICENSE`; choose a license before reusing or distributing its code.
 
@@ -87,7 +87,10 @@ npm run lint
 npm run build
 npm run start
 npm run db:migrate
+npm run audit:media
 ```
+
+`npm run audit:media` writes `docs/MEDIA_AUDIT.md`. It exits with code 1 while unverified placeholders or structural errors remain; this is an intentional production-readiness gate, not a claim that the current placeholders are licensed.
 
 
 ## Homepage hero update

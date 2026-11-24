@@ -4,6 +4,8 @@
 
 The homepage hero always renders its still-image poster. A video is optional and is enabled only when `NEXT_PUBLIC_LAUXIRIO_HERO_VIDEO_SRC` is configured. The video is muted, loops inline and fades in only after playback starts. If playback fails, the still image remains. It does not attempt autoplay when the visitor requests reduced motion or the browser reports data saver / 2G.
 
+The poster is prioritized and remains the image fallback across viewport sizes. The responsive image request is sized to the viewport; when a separately composed mobile crop is supplied, document and integrate it without removing the desktop poster or still fallback. There is currently no approved mobile-specific image or video file.
+
 ## Enable a licensed campaign video
 
 1. Obtain a Lauxirio-owned film or purchase a stock asset whose current license covers commercial use on the salon website.
@@ -14,6 +16,7 @@ The homepage hero always renders its still-image poster. A video is optional and
    `NEXT_PUBLIC_LAUXIRIO_HERO_VIDEO_SRC=/media/video/lauxirio-hero.mp4`
 6. Rebuild/redeploy the site. Check desktop, mobile, slow connections, browser autoplay restrictions and reduced-motion settings.
 7. Add the source, creator, license/receipt reference, download date and intended use to `ASSET_REGISTER.md`.
+8. Run `npm run audit:media` and resolve any missing file or provenance findings. The audit intentionally exits with code 1 while unverified placeholders remain.
 
 ## Creative and export guidance
 
@@ -26,6 +29,8 @@ The homepage hero always renders its still-image poster. A video is optional and
 - Poster: retain a sharp, optimized still image because it is always the first frame/fallback and is used when motion/data settings require it.
 
 These are practical production targets, not a substitute for testing actual encoded media on target devices.
+
+Keep the video variable unset until the real local file exists and the applicable rights are confirmed. The audit checks a configured local video path but does not certify playback quality, compression or license validity.
 
 ## Licensing safeguards
 

@@ -27,6 +27,17 @@
 - Journal articles are draft previews, without publication dates or expert credentials, pending owner review.
 - No application license has been selected.
 
+## Phase 3 media audit
+
+- `npm.cmd run audit:media` — ran successfully and generated `docs/MEDIA_AUDIT.md`; it exits with code 1 by design because production blockers remain.
+- Audit result: 22 image placement entries; 0 approved assets; 22 unverified placeholders; creator, source page, license record and acquisition date missing for all 22 entries; 6 repeated remote source images; 0 broken local media paths; hero video not configured.
+- Alt descriptions and declared image dimensions exist for all current entries. This audit checks declared dimensions and local file existence; it does not inspect intrinsic pixels, remote availability, visual crops, actual license terms or video playback.
+- No asset purchase, download, video activation, or changes to booking APIs/forms were made.
+- `npm.cmd run lint` — passed after the Phase 3 audit implementation.
+- `npm.cmd run build` — passed with TypeScript checks and static page generation after the Phase 3 media-config changes.
+- The audit's missing-video-path check was exercised with a temporary environment override and correctly reported a missing local file; the environment was restored and the generated report rerun.
+- No Phase 3 browser visual QA was run because no approved media/video was added and no UI behavior changed. The previous responsive, image-loading and reduced-motion checks above are from the existing implementation, not evidence that future campaign files have been verified.
+
 ## Launch gate
 
 Do not represent this concept website as an operating salon until operational business facts, approved media, database/security operations, legal privacy terms, email sender and production URL are configured and verified.

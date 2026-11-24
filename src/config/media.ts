@@ -1,9 +1,20 @@
+export type MediaStatus =
+  | "approved-owned"
+  | "approved-licensed"
+  | "unverified-placeholder";
+
 export type MediaImage = {
+  id: string;
   src: string;
   alt: string;
-  width: number;
-  height: number;
-  licenseStatus: "unverified-placeholder";
+  width: number | null;
+  height: number | null;
+  creator: string | null;
+  sourceUrl: string | null;
+  licenseUrl: string | null;
+  acquisitionDate: string | null;
+  intendedPlacement: string[];
+  status: MediaStatus;
 };
 
 function placeholderImage(
@@ -11,14 +22,21 @@ function placeholderImage(
   width: number,
   height: number,
   description: string,
+  intendedPlacement: string[],
   quality = 85,
 ): MediaImage {
   return {
+    id: `${photoId}-${intendedPlacement[0].toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
     src: `https://images.unsplash.com/${photoId}?auto=format&fit=crop&w=${width}&h=${height}&q=${quality}`,
-    alt: `${description} — unverified concept placeholder, not official Lauxirio work.`,
+    alt: `${description} - unverified concept placeholder, not official Lauxirio work.`,
     width,
     height,
-    licenseStatus: "unverified-placeholder",
+    creator: null,
+    sourceUrl: null,
+    licenseUrl: null,
+    acquisitionDate: null,
+    intendedPlacement,
+    status: "unverified-placeholder",
   };
 }
 
@@ -29,6 +47,7 @@ export const media = {
       2400,
       1600,
       "Salon editorial scene",
+      ["Homepage hero poster"],
       90,
     ),
     inset: placeholderImage(
@@ -36,6 +55,7 @@ export const media = {
       1100,
       1400,
       "Studio interior",
+      ["Homepage secondary editorial image"],
       88,
     ),
   },
@@ -44,6 +64,7 @@ export const media = {
     1400,
     1100,
     "Salon interior concept",
+    ["Homepage philosophy section"],
   ),
   services: {
     signatureCut: placeholderImage(
@@ -51,36 +72,42 @@ export const media = {
       1200,
       900,
       "Haircut and styling concept",
+      ["Service menu: signature cut"],
     ),
     dimensionalColour: placeholderImage(
       "photo-1522337360788-8b13dee7a37e",
       1200,
       900,
       "Hair colour concept",
+      ["Service menu: dimensional colour"],
     ),
     hairScalpRitual: placeholderImage(
       "photo-1527799820374-dcf8d9d4a388",
       1200,
       900,
       "Hair and scalp care concept",
+      ["Service menu: hair and scalp care"],
     ),
     grooming: placeholderImage(
       "photo-1503951914875-452162b0f3f1",
       1200,
       900,
       "Grooming concept",
+      ["Service menu: grooming"],
     ),
     bridal: placeholderImage(
       "photo-1519741497674-611481863552",
       1200,
       900,
       "Occasion styling concept",
+      ["Service menu: bridal and occasion"],
     ),
     consultation: placeholderImage(
       "photo-1487412947147-5cebf100ffc2",
       1200,
       900,
       "Beauty consultation concept",
+      ["Service menu: consultation"],
     ),
   },
   gallery: [
@@ -95,6 +122,7 @@ export const media = {
         1000,
         1250,
         "Haircut editorial concept",
+        ["Lookbook: haircuts and styling", "Journal: precision cut preview"],
       ),
     },
     {
@@ -108,6 +136,7 @@ export const media = {
         1000,
         1250,
         "Hair colour editorial concept",
+        ["Lookbook: colour", "Journal: dimensional colour preview"],
       ),
     },
     {
@@ -121,6 +150,7 @@ export const media = {
         1000,
         1250,
         "Occasion beauty editorial concept",
+        ["Lookbook: bridal and occasion styling"],
       ),
     },
     {
@@ -134,6 +164,7 @@ export const media = {
         1200,
         850,
         "Grooming editorial concept",
+        ["Lookbook: grooming"],
       ),
     },
     {
@@ -147,6 +178,7 @@ export const media = {
         1000,
         1250,
         "Hair texture editorial concept",
+        ["Lookbook: texture", "Journal: texture preview"],
       ),
     },
     {
@@ -160,6 +192,7 @@ export const media = {
         1200,
         850,
         "Styling editorial concept",
+        ["Lookbook: editorial styling"],
       ),
     },
     {
@@ -173,6 +206,7 @@ export const media = {
         1000,
         1250,
         "Beauty editorial concept",
+        ["Lookbook: beauty editorial"],
       ),
     },
     {
@@ -186,6 +220,7 @@ export const media = {
         1000,
         1250,
         "Hair colour concept",
+        ["Lookbook: colour study"],
       ),
     },
   ],
@@ -197,6 +232,7 @@ export const media = {
         900,
         1200,
         "Illustrative portrait for a proposed hair artist profile",
+        ["Artists: hair artist placeholder"],
       ),
     },
     {
@@ -206,6 +242,7 @@ export const media = {
         900,
         1200,
         "Illustrative portrait for a proposed colour artist profile",
+        ["Artists: colour artist placeholder"],
       ),
     },
     {
@@ -215,6 +252,7 @@ export const media = {
         900,
         1200,
         "Illustrative portrait for a proposed beauty artist profile",
+        ["Artists: beauty and grooming placeholder"],
       ),
     },
   ],
@@ -224,12 +262,14 @@ export const media = {
       1600,
       1100,
       "Studio interior concept",
+      ["Studio: interior concept"],
     ),
     detail: placeholderImage(
       "photo-1560869713-7d0a29430803",
       1200,
       1400,
       "Salon detail concept",
+      ["Studio: detail concept"],
     ),
   },
 } as const;
