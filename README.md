@@ -6,6 +6,7 @@ A luxury, unisex salon website concept built with Next.js 16, React 19, TypeScri
 
 - `/` — editorial homepage
 - `/about`, `/services`, `/gallery`, `/artists`, `/experience`, `/journal`
+- `/journal/[slug]` — editorial preview detail with related stories
 - `/booking` — appointment request with configured live availability
 - `/contact` — verified contact details will be added when supplied
 - `/privacy` — booking data summary
@@ -75,7 +76,7 @@ Email is optional and uses the Resend REST API only when all three email variabl
 
 ## Media and content readiness
 
-Current Unsplash image URLs are unverified editorial placeholders, not approved Lauxirio campaign/staff photography. See [ASSET_REGISTER.md](./ASSET_REGISTER.md). The 3D hero is procedural and falls back on reduced-motion, narrow-screen and WebGL-unavailable contexts.
+Current Unsplash image URLs are unverified editorial placeholders, not approved Lauxirio campaign/staff photography. Image metadata is centralized in `src/config/media.ts`, service and editorial copy in `src/config/content.ts`, and the source/license register is [ASSET_REGISTER.md](./ASSET_REGISTER.md). Placeholder notices remain visible until approved media is supplied. The 3D hero is procedural and falls back on reduced-motion, narrow-screen and WebGL-unavailable contexts.
 
 Salon address, telephone, email, public hours, staff identities, service durations/prices and production domain were not provided. They are intentionally not invented or emitted as HairSalon structured data. Set verified operational configuration before launch. The repository has no `LICENSE`; choose a license before reusing or distributing its code.
 
@@ -92,3 +93,11 @@ npm run db:migrate
 ## Homepage hero update
 
 The homepage uses a cinematic editorial composition: full-bleed salon photography, dark photographic grading, refined headline and clear appointment/menu actions, plus a framed secondary studio photograph. The oversized decorative 3D product bottle has been removed from the first screen so the salon and editorial imagery remain the focus. The secondary photograph is concept media; replace it with salon-owned or properly licensed campaign photography before launch and record its license in ASSET_REGISTER.md.
+
+## Phase 2 content and experience
+
+The services, lookbook, artist profiles and journal use shared data/configuration. Service links use only the six IDs already supported by the appointment API; the site does not invent service prices, durations, staff identities or publication dates. The lookbook lightbox supports keyboard controls, focus management and touch swipes. Journal pieces are original draft previews pending owner review. Replace the illustrative media and approve editorial copy before launch.
+
+## Hero campaign video (optional)
+
+The homepage hero supports an optional silent MP4 or WebM campaign loop. Keep `NEXT_PUBLIC_LAUXIRIO_HERO_VIDEO_SRC` unset to use the poster image only. For setup, recommended export settings, reduced-motion behavior and licensing records, see [docs/HERO_MEDIA.md](./docs/HERO_MEDIA.md). The video must be owned by Lauxirio or cleared for commercial website use; do not publish stock previews or watermarked footage.

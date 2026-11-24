@@ -1,27 +1,30 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const links = [
-  ["Home", "/"],
   ["About", "/about"],
   ["Services", "/services"],
-  ["Gallery", "/gallery"],
+  ["Lookbook", "/gallery"],
   ["Artists", "/artists"],
-  ["Experience", "/experience"],
-  ["Contact", "/contact"],
+  ["Studio", "/experience"],
+  ["Journal", "/journal"],
 ];
 
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setMenuOpen(false);
+      if (event.key === "Escape" && menuOpen) {
+        setMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -30,23 +33,28 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("keydown", onKey);
     };
-  }, []);
+  }, [menuOpen]);
 
   return (
     <>
       <header className={scrolled ? "nav-wrap scrolled" : "nav-wrap"}>
         <Link className="brand" href="/" aria-label="Lauxirio home">LAUXIRIO</Link>
-        <nav className={menuOpen ? "nav-links open" : "nav-links"} aria-label="Main navigation">
+        <nav id="primary-navigation" className={menuOpen ? "nav-links open" : "nav-links"} aria-label="Main navigation">
           {links.map(([label, href]) => (
             <Link key={href} href={href} onClick={() => setMenuOpen(false)}>{label}</Link>
           ))}
+          <Link className="mobile-nav-book" href="/booking" onClick={() => setMenuOpen(false)}>
+            Book appointment <ArrowRight size={14} aria-hidden="true" />
+          </Link>
         </nav>
         <Link className="nav-book" href="/booking">Book appointment</Link>
         <button
+          ref={menuButtonRef}
           className="menu-button"
           type="button"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
           onClick={() => setMenuOpen((value) => !value)}
         >
           {menuOpen ? <X /> : <Menu />}

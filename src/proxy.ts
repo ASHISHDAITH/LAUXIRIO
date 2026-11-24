@@ -21,6 +21,7 @@ export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   if (
     publicPages.has(pathname.replace(/\/+$/, "") || "/") ||
+    pathname.startsWith("/journal/") ||
     pathname.startsWith("/api/") ||
     pathname.startsWith("/_next/") ||
     /\.(?:avif|gif|ico|jpe?g|mp4|otf|png|svg|ttf|webm|webp|woff2?)$/i.test(pathname)

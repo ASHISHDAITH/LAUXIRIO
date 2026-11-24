@@ -1,16 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import BookingForm from "@/components/BookingForm";
 import { Suspense } from "react";
-import HeroScene from "@/components/HeroScene";
 import { GalleryExplorer, ServiceExplorer } from "@/components/InteractiveSections";
 import Preloader from "@/components/Preloader";
-
-const experts = [
-  ["https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=85", "Hair Artist", "Cutting & Styling", "Editorial cutting · Texture-led styling"],
-  ["https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=85", "Colour Artist", "Colour Direction", "Dimensional colour · Glossing"],
-  ["https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85", "Beauty Artist", "Beauty & Grooming", "Bridal · Skin · Occasion"],
-];
+import HeroCampaignMedia from "@/components/HeroCampaignMedia";
+import { artistProfiles } from "@/config/content";
+import { media } from "@/config/media";
 
 export default function Home() {
   return (
@@ -18,21 +15,15 @@ export default function Home() {
       <Preloader />
       <main id="top">
         <section className="hero hero-editorial" aria-labelledby="hero-title">
-          <div className="hero-photo" aria-hidden="true">
-            <Image
-              src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2400&q=90"
-              alt=""
-              fill
-              priority
-              sizes="100vw"
-              quality={90}
-            />
-          </div>
+          <HeroCampaignMedia
+            posterSrc={media.hero.poster.src}
+            videoSrc={process.env.NEXT_PUBLIC_LAUXIRIO_HERO_VIDEO_SRC}
+          />
           <div className="hero-grain" aria-hidden="true" />
           <div className="hero-vignette" aria-hidden="true" />
           <div className="hero-editorial-index" aria-hidden="true">
             <span>THE ART OF PERSONAL STYLE</span>
-            <span>EST. IN CRAFT · MADE FOR YOU</span>
+            <span>CRAFT, CONSIDERED · MADE FOR YOU</span>
           </div>
           <div className="hero-content">
             <p className="eyebrow"><span className="hero-eyebrow-mark" /> Luxury hair, beauty & grooming <span className="hero-eyebrow-divider">/</span> Unisex</p>
@@ -46,16 +37,17 @@ export default function Home() {
           <div className="hero-visual" aria-hidden="true">
             <div className="hero-visual-frame">
               <Image
-                src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1100&q=88"
+                src={media.hero.inset.src}
                 alt=""
                 fill
+                loading="eager"
                 sizes="(max-width: 700px) 72vw, (max-width: 1100px) 48vw, 38vw"
                 quality={88}
               />
               <div className="hero-visual-shade" />
-              <span className="hero-visual-label">THE STUDIO / 001</span>
+              <span className="hero-visual-label">STUDIO CONCEPT / PLACEHOLDER</span>
             </div>
-            <span className="hero-visual-caption">A PLACE FOR YOUR NEXT CHAPTER</span>
+            <span className="hero-visual-caption">ILLUSTRATIVE IMAGE · LICENSE PENDING</span>
           </div>
           <div className="hero-bottomline">
             <div className="hero-bottom-note"><span>01</span><span>Considered craft</span></div>
@@ -71,7 +63,13 @@ export default function Home() {
             <h2>Not a trend.<br /><em>A point of view.</em></h2>
           </div>
           <div className="story-image">
-            <Image src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1200&q=85" alt="Salon interior concept image" fill sizes="(max-width: 700px) 82vw, 45vw" />
+            <Image
+              src={media.story.src}
+              alt={media.story.alt}
+              fill
+              sizes="(max-width: 700px) 82vw, 45vw"
+            />
+            <span className="image-disclosure">Illustrative concept image</span>
           </div>
           <div className="story-copy">
             <p className="lead">We believe beauty is most powerful when it feels unmistakably yours.</p>
@@ -98,11 +96,16 @@ export default function Home() {
 
         <section className="experts section" id="experts">
           <div className="section-heading"><div><p className="eyebrow">At your chair</p><h2>Meet the <em>artists</em></h2></div></div>
+          <p className="media-disclosure">Profile labels and portraits are illustrative placeholders. Artist identities, biographies and availability await confirmation.</p>
           <div className="expert-grid">
-            {experts.map((expert) => (
-              <article className="expert-card" key={expert[1]}>
-                <div className="expert-image"><Image src={expert[0]} alt={`Editorial placeholder portrait: ${expert[1]}`} fill sizes="(max-width: 700px) 90vw, 33vw" /></div>
-                <p>{expert[2]}</p><h3>{expert[1]}</h3><span>{expert[3]}</span>
+            {artistProfiles.map((artist) => (
+              <article className="expert-card" key={artist.id}>
+                <div className="expert-image">
+                  <Image src={artist.image.src} alt={artist.image.alt} fill sizes="(max-width: 700px) 90vw, 33vw" />
+                  <span className="image-disclosure">Illustrative portrait</span>
+                </div>
+                <p>{artist.specialties}</p><h3>{artist.role}</h3>
+                <span>Profile to be updated after artist details are confirmed.</span>
               </article>
             ))}
           </div>
@@ -117,12 +120,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="pricing section" id="pricing">
-          <div className="pricing-heading"><p className="eyebrow">The Lauxirio edit</p><h2>Time for <em>you.</em></h2></div>
+        <section className="pricing section" id="planning">
+          <div className="pricing-heading"><p className="eyebrow">Before you book</p><h2>A clear path to <em>your visit.</em></h2></div>
           <div className="package-grid">
-            <article><p>01 / Signature</p><h3>The New Cut</h3><span>By consultation</span><ul><li>Consultation</li><li>Precision cut</li><li>Wash & finish</li></ul><a href="#booking">Enquire <ArrowRight size={14} /></a></article>
-            <article className="featured-package"><p>02 / Complete</p><h3>The Lauxirio Ritual</h3><span>By consultation</span><ul><li>Hair consultation</li><li>Cut or colour</li><li>Beauty finishing</li></ul><a href="#booking">Enquire <ArrowRight size={14} /></a></article>
-            <article><p>03 / Occasion</p><h3>The Bridal Edit</h3><span>By consultation</span><ul><li>Bridal preview</li><li>Hair & makeup</li><li>Touch-up kit</li></ul><a href="#booking">Enquire <ArrowRight size={14} /></a></article>
+            <article><p>01 / Discuss</p><h3>Share your brief</h3><span>Start with what matters to you</span><ul><li>Your preferred look</li><li>Your everyday routine</li><li>What you want to explore</li></ul><a href="#booking">Continue to appointment <ArrowRight size={14} /></a></article>
+            <article className="featured-package"><p>02 / Confirm</p><h3>Agree the details</h3><span>Before an appointment is arranged</span><ul><li>Service scope</li><li>Timing and availability</li><li>Any applicable price</li></ul><Link href="/services">Review the service menu <ArrowRight size={14} /></Link></article>
+            <article><p>03 / Request</p><h3>Choose a time</h3><span>Requests remain pending until reviewed</span><ul><li>Select from configured options</li><li>Submit an appointment request</li><li>Wait for salon confirmation</li></ul><a href="#booking">Request an appointment <ArrowRight size={14} /></a></article>
           </div>
         </section>
 
