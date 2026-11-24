@@ -76,7 +76,7 @@ Email is optional and uses the Resend REST API only when all three email variabl
 
 ## Media and content readiness
 
-Seven Pexels images are locally optimized with their platform-license records, but separate model/property releases and other third-party permissions remain pending review. They are illustrative references only, not LAUXIRIO staff, clients, results, campaign work or premises. Fifteen other placements remain unverified placeholders. Image metadata and explicit approval status are centralized in `src/config/media.ts`; page copy remains in `src/config/content.ts`. The source/license register is [ASSET_REGISTER.md](./ASSET_REGISTER.md), the requested deliverables are in [docs/MEDIA_SHOT_LIST.md](./docs/MEDIA_SHOT_LIST.md), and the creative guidance is in [docs/MEDIA_ART_DIRECTION.md](./docs/MEDIA_ART_DIRECTION.md). Run `npm run audit:media` to check local paths, metadata and video configuration; the current report is [docs/MEDIA_AUDIT.md](./docs/MEDIA_AUDIT.md). No LAUXIRIO-owned campaign, staff, client-result, or actual studio media has been supplied, and the optional hero video remains unconfigured. Keep the visible stock disclosures until rights review is complete.
+Fourteen Pexels images are locally optimized with source and platform-license records, but separate model/property releases and other third-party permissions remain pending review. They are illustrative references only, not LAUXIRIO staff, clients, results, campaign work or actual premises. Eight placements remain unverified placeholders: three artist portraits, two actual-studio images and three lookbook images without a suitable verified candidate. Image metadata and explicit rights evidence/status are centralized in `src/config/media.ts`; page copy remains in `src/config/content.ts`. The source/license register and candidate decisions are in [ASSET_REGISTER.md](./ASSET_REGISTER.md), the photography brief is in [docs/MEDIA_SHOT_LIST.md](./docs/MEDIA_SHOT_LIST.md), and the creative guidance is in [docs/MEDIA_ART_DIRECTION.md](./docs/MEDIA_ART_DIRECTION.md). Run `npm run audit:media` to check local paths, metadata, repeated sources, third-party rights evidence and video configuration; the current report is [docs/MEDIA_AUDIT.md](./docs/MEDIA_AUDIT.md). No LAUXIRIO-owned campaign, staff, client-result, or actual studio media has been supplied, and the optional hero video remains unconfigured. Keep the visible stock disclosures until rights review is complete.
 
 Salon address, telephone, email, public hours, staff identities, service durations/prices and production domain were not provided. They are intentionally not invented or emitted as HairSalon structured data. Set verified operational configuration before launch. The repository has no `LICENSE`; choose a license before reusing or distributing its code.
 
@@ -90,12 +90,12 @@ npm run db:migrate
 npm run audit:media
 ```
 
-`npm run audit:media` writes `docs/MEDIA_AUDIT.md`. It exits with code 1 while unverified placeholders or structural errors remain; this is an intentional production-readiness gate, not a claim that the current placeholders are licensed.
+`npm run audit:media` writes `docs/MEDIA_AUDIT.md`. It exits with code 1 while unverified placeholders, pending rights evidence or structural errors remain; this is an intentional production-readiness gate, not a claim that the current placeholders are licensed or cleared.
 
 
 ## Homepage hero update
 
-The homepage uses a cinematic editorial composition: a full-bleed, locally optimized Pexels craft-detail photo with a visible illustrative-stock disclosure, dark photographic grading, refined headline and clear appointment/menu actions, plus a framed secondary studio concept placeholder. The oversized decorative 3D product bottle has been removed from the first screen so the salon and editorial imagery remain the focus. Replace the stock poster and secondary placeholder with owner-approved LAUXIRIO campaign/studio photography before launch.
+The homepage uses a cinematic editorial composition: a full-bleed, locally optimized Pexels craft-detail photo with a visible illustrative-stock disclosure, dark photographic grading, refined headline and clear appointment/menu actions, plus a face-free, cropped Pexels hair-texture inset explicitly identified as stock and not LAUXIRIO work. The philosophy image is also an illustrative Pexels craft detail. The oversized decorative 3D product bottle has been removed from the first screen so the salon and editorial imagery remain the focus. Replace the stock poster and inset with owner-approved LAUXIRIO campaign/studio photography before launch.
 
 ## Phase 2 content and experience
 

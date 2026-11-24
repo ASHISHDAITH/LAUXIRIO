@@ -188,7 +188,7 @@ export default async function ContentPage({ params }: { params: Promise<{ slug: 
           <article className="journal-featured">
             <Link className="journal-featured-image" href={`/journal/${featuredArticle.slug}`} aria-label={`Read preview: ${featuredArticle.title}`}>
               <Image src={featuredArticle.image.src} alt={featuredArticle.image.alt} fill sizes="(max-width: 800px) 90vw, 55vw" />
-              <span className="image-disclosure">Illustrative concept image</span>
+              <span className="image-disclosure">Illustrative stock · not LAUXIRIO work</span>
             </Link>
             <div className="journal-featured-copy">
               <p>{featuredArticle.category} · Featured preview</p>
@@ -203,7 +203,7 @@ export default async function ContentPage({ params }: { params: Promise<{ slug: 
               <article key={article.slug}>
                 <Link className="journal-card-image" href={`/journal/${article.slug}`} aria-label={`Read preview: ${article.title}`}>
                   <Image src={article.image.src} alt={article.image.alt} fill sizes="(max-width: 700px) 90vw, 33vw" />
-                  <span className="image-disclosure">Concept image</span>
+                  <span className="image-disclosure">Illustrative stock · not LAUXIRIO work</span>
                 </Link>
                 <p>{article.category} · Preview</p>
                 <h2>{article.title}</h2>

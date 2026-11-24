@@ -185,7 +185,7 @@ export function GalleryExplorer({ variant = "home" }: { variant?: ExplorerVarian
       >
         <div className="section-heading gallery-heading">
           <div>
-            <p className="eyebrow">{variant === "home" ? "Selected work" : "Explore by category"}</p>
+            <p className="eyebrow">{variant === "home" ? "Editorial inspiration" : "Explore by category"}</p>
             <h2 id="gallery-heading">
               {variant === "home" ? <>The <em>lookbook</em></> : <>Shape. Colour. <em>Character.</em></>}
             </h2>

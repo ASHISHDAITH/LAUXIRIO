@@ -33,7 +33,7 @@ export default function Home() {
               <a className="primary-button" href="#booking">Reserve your experience <ArrowRight size={15} /></a>
               <a className="text-link" href="#services">Discover the menu <ArrowDown size={14} /></a>
             </div>
-            <p className="hero-stock-disclosure">Illustrative Pexels stock image · not LAUXIRIO campaign work</p>
+            <p className="hero-stock-disclosure">Pexels stock · not LAUXIRIO campaign work</p>
           </div>
           <div className="hero-visual" aria-hidden="true">
             <div className="hero-visual-frame">
@@ -46,9 +46,9 @@ export default function Home() {
                 quality={88}
               />
               <div className="hero-visual-shade" />
-              <span className="hero-visual-label">STUDIO CONCEPT / PLACEHOLDER</span>
+              <span className="hero-visual-label">PEXELS STOCK DETAIL</span>
             </div>
-            <span className="hero-visual-caption">UNVERIFIED PLACEHOLDER · NOT LAUXIRIO STUDIO</span>
+            <span className="hero-visual-caption">NOT LAUXIRIO WORK</span>
           </div>
           <div className="hero-bottomline">
             <div className="hero-bottom-note"><span>01</span><span>Considered craft</span></div>
@@ -70,7 +70,7 @@ export default function Home() {
               fill
               sizes="(max-width: 700px) 82vw, 45vw"
             />
-            <span className="image-disclosure">Illustrative concept image</span>
+            <span className="image-disclosure">Pexels stock · not LAUXIRIO work</span>
           </div>
           <div className="story-copy">
             <p className="lead">We believe beauty is most powerful when it feels unmistakably yours.</p>

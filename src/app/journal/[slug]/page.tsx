@@ -53,7 +53,7 @@ export default async function JournalArticlePage({
         </p>
         <figure className="article-image">
           <Image src={article.image.src} alt={article.image.alt} fill sizes="(max-width: 700px) 90vw, 72vw" />
-          <figcaption>Illustrative concept placeholder · Not verified Lauxirio work</figcaption>
+          <figcaption>Illustrative stock image · Not verified LAUXIRIO work</figcaption>
         </figure>
         <p className="article-lead">{article.excerpt}</p>
         <div className="article-body">
@@ -77,7 +77,7 @@ export default async function JournalArticlePage({
             <article key={related.slug}>
               <Link className="journal-card-image" href={`/journal/${related.slug}`} aria-label={`Read preview: ${related.title}`}>
                 <Image src={related.image.src} alt={related.image.alt} fill sizes="(max-width: 700px) 90vw, 33vw" />
-                <span className="image-disclosure">Concept image</span>
+                <span className="image-disclosure">Illustrative stock · not LAUXIRIO work</span>
               </Link>
               <p>{related.category} · Preview</p>
               <h2>{related.title}</h2>

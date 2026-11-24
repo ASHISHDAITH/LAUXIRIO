@@ -13,6 +13,7 @@ export type MediaImage = {
   creator: string | null;
   sourceUrl: string | null;
   licenseUrl: string | null;
+  thirdPartyRightsEvidence: string[] | null;
   acquisitionDate: string | null;
   intendedPlacement: string[];
   status: MediaStatus;
@@ -38,6 +39,7 @@ function placeholderImage(
     creator: null,
     sourceUrl: null,
     licenseUrl: null,
+    thirdPartyRightsEvidence: null,
     acquisitionDate: null,
     intendedPlacement,
     status: "unverified-placeholder",
@@ -63,6 +65,7 @@ function pexelsStockImage(
     creator,
     sourceUrl,
     licenseUrl: PEXELS_LICENSE_URL,
+    thirdPartyRightsEvidence: [],
     acquisitionDate: MEDIA_ACQUISITION_DATE,
     intendedPlacement,
     status: "licensed-review-pending",
@@ -81,20 +84,25 @@ export const media = {
       "https://www.pexels.com/photo/close-up-of-the-hands-of-a-hairdresser-at-work-6487888/",
       ["Homepage hero poster"],
     ),
-    inset: placeholderImage(
-      "photo-1521590832167-7bcbfaa6381f",
+    inset: pexelsStockImage(
+      "4066506",
+      "hero/hero-inset-hair-texture.webp",
       1100,
       1400,
-      "Studio interior",
+      "Close-up of dark hair strands with a soft warm highlight; the crop excludes the model's face. Illustrative Pexels stock image, not LAUXIRIO work.",
+      "Alexander Krivitskiy",
+      "https://www.pexels.com/photo/shallow-focus-photo-of-hair-4066506/",
       ["Homepage secondary editorial image"],
-      88,
     ),
   },
-  story: placeholderImage(
-    "photo-1560869713-7d0a29430803",
+  story: pexelsStockImage(
+    "3356170",
+    "services/precision-cut-detail.webp",
     1400,
     1100,
-    "Salon interior concept",
+    "A stylist's hands sectioning dark hair with scissors and a comb; illustrative Pexels stock image, not LAUXIRIO work.",
+    "Engin Akyurt",
+    "https://www.pexels.com/photo/person-cutting-hair-3356170/",
     ["Homepage philosophy section"],
   ),
   services: {
@@ -128,11 +136,14 @@ export const media = {
       "https://www.pexels.com/photo/a-hairdresser-combing-clients-hair-23349912/",
       ["Service menu: hair and scalp care"],
     ),
-    grooming: placeholderImage(
-      "photo-1503951914875-452162b0f3f1",
+    grooming: pexelsStockImage(
+      "12464843",
+      "services/grooming-detail.webp",
       1200,
       900,
-      "Grooming concept",
+      "A close crop of short hair being shaped with a comb and scissors; illustrative Pexels stock image, not LAUXIRIO work.",
+      "Izzet Çakallı",
+      "https://www.pexels.com/photo/shaving-and-equipment-at-the-barbershop-12464843/",
       ["Service menu: grooming"],
     ),
     bridal: pexelsStockImage(
@@ -163,25 +174,31 @@ export const media = {
       label: "Haircuts",
       categories: ["Haircuts", "Styling", "Editorial"],
       orientation: "portrait",
-      image: placeholderImage(
-        "photo-1562322140-8baeececf3df",
+      image: pexelsStockImage(
+        "3993442",
+        "gallery/editorial-cut-process.webp",
         1000,
         1250,
-        "Haircut editorial concept",
+        "A stylist trims long dark hair from behind; illustrative Pexels stock image, not LAUXIRIO work.",
+        "cottonbro studio",
+        "https://www.pexels.com/photo/woman-getting-a-haircut-3993442/",
         ["Lookbook: haircuts and styling", "Journal: precision cut preview"],
       ),
     },
     {
       id: "soft-dimension",
-      title: "Soft dimension",
+      title: "Colour in progress",
       label: "Colour",
-      categories: ["Colour", "Texture", "Editorial"],
+      categories: ["Colour", "Editorial"],
       orientation: "portrait",
-      image: placeholderImage(
-        "photo-1524504388940-b1c1722653e1",
+      image: pexelsStockImage(
+        "29555682",
+        "gallery/colour-process-reference.webp",
         1000,
         1250,
-        "Hair colour editorial concept",
+        "A stylist separates dark hair with foils during a colour process; illustrative Pexels stock image, not a result or LAUXIRIO work.",
+        "Doğan Alpaslan Demir",
+        "https://www.pexels.com/photo/professional-hair-coloring-session-in-salon-29555682/",
         ["Lookbook: colour", "Journal: dimensional colour preview"],
       ),
     },
@@ -191,11 +208,14 @@ export const media = {
       label: "Bridal",
       categories: ["Bridal", "Styling", "Editorial"],
       orientation: "portrait",
-      image: placeholderImage(
-        "photo-1488426862026-3ee34a7d66df",
+      image: pexelsStockImage(
+        "38530649",
+        "gallery/bridal-updo-inspiration.webp",
         1000,
         1250,
-        "Occasion beauty editorial concept",
+        "Rear view of an occasion updo being adjusted by a stylist; illustrative Pexels stock image, not LAUXIRIO work.",
+        "Luis Morales Torres",
+        "https://www.pexels.com/photo/wedding-hairstyle-preparation-in-bright-room-38530649/",
         ["Lookbook: bridal and occasion styling"],
       ),
     },
@@ -204,12 +224,15 @@ export const media = {
       title: "Modern grooming",
       label: "Grooming",
       categories: ["Grooming", "Haircuts"],
-      orientation: "landscape",
-      image: placeholderImage(
-        "photo-1503951914875-452162b0f3f1",
-        1200,
-        850,
-        "Grooming editorial concept",
+      orientation: "portrait",
+      image: pexelsStockImage(
+        "32329615",
+        "gallery/grooming-cut-detail.webp",
+        1000,
+        1250,
+        "Close crop of a short haircut being shaped with scissors; the crop excludes faces. Illustrative Pexels stock image, not LAUXIRIO work.",
+        "Bulat843 🌙",
+        "https://www.pexels.com/photo/professional-haircut-at-modern-barbershop-32329615/",
         ["Lookbook: grooming"],
       ),
     },
