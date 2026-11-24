@@ -97,7 +97,7 @@ export function ServiceExplorer({ variant = "home" }: { variant?: ExplorerVarian
         ))}
       </div>
       <p className="media-disclosure">
-        Service imagery is illustrative placeholder photography, not verified Lauxirio work.
+        Service imagery is illustrative stock or placeholder photography. People shown are not LAUXIRIO staff or clients and do not endorse the salon; no image is verified LAUXIRIO work.
       </p>
     </section>
   );
@@ -205,7 +205,7 @@ export function GalleryExplorer({ variant = "home" }: { variant?: ExplorerVarian
           </div>
         </div>
         <p className="media-disclosure">
-          Illustrative concept images only; these are not verified client results or Lauxirio campaign assets.
+          Illustrative stock or concept images only; these are not verified client results or LAUXIRIO campaign assets. People shown are not LAUXIRIO staff or clients and do not endorse the salon.
         </p>
         <div className="gallery-grid" aria-live="polite">
           {visibleItems.map((item) => (

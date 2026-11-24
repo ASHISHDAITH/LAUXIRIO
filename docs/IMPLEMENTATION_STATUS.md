@@ -46,6 +46,12 @@
 - Added explicit asset provenance/status fields to `src/config/media.ts` while retaining all existing image references as `unverified-placeholder`.
 - Added `scripts/audit-media.mjs` and the `npm run audit:media` command; it checks local image/video paths, alt text, declared dimensions, status and provenance fields, and writes `docs/MEDIA_AUDIT.md`.
 - Added a complete media shot list, creative direction, source-term research notes and owner acquisition/approval guidance.
-- No image or video was downloaded or purchased; no hero video is configured.
-- The generated audit found 22 unverified image placements, zero approved assets, six repeated remote source images, zero broken local media paths and no configured hero video. Creator/source/license/acquisition metadata is missing for all 22 placements.
-- Owner still needs to supply or approve the real campaign, service, lookbook, staff/process and studio media listed in `docs/MEDIA_SHOT_LIST.md`, plus asset-specific rights/release records. See `docs/MEDIA_AUDIT.md` for current findings.
+- The Phase 3 baseline had 22 unverified image placements, six repeated remote source images, zero broken local media paths and no configured hero video.
+
+## Phase 4 free-source media
+
+- Added seven verified Pexels photos as locally optimized WebP references with creator, source page, license, acquisition date, dimensions, alt text, intended placement and `approved-licensed` status.
+- Kept the assets illustrative and added visible hero, service and lookbook disclosures; no stock image is described as LAUXIRIO work, a real client result, a staff member or the actual studio.
+- Fifteen placements remain unverified, including artist portraits, most lookbook imagery, the secondary hero image and studio imagery. No paid assets or video were added.
+- Run `npm run audit:media`; current counts and any remaining remote duplicates are in `docs/MEDIA_AUDIT.md`.
+- Owner still needs to supply or approve the real campaign, service, lookbook, staff/process and studio media listed in `docs/MEDIA_SHOT_LIST.md`, plus any relevant rights/release records.

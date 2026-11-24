@@ -2,34 +2,25 @@
 
 ## Readiness
 
-There are no approved-owned or approved-licensed campaign assets in this repository. The website currently references 22 Unsplash CDN image placements, all explicitly marked `unverified-placeholder`. They are concept references only; do not imply that they depict LAUXIRIO, its premises, staff or customers. No asset has been individually selected, downloaded, attributed, or cleared for this campaign, and no paid asset or subscription has been acquired.
+The media catalog contains seven `approved-licensed` Pexels stock references stored as optimized local WebP files and 15 `unverified-placeholder` placements. “Approved-licensed” means the recorded Pexels license permits the stated commercial website use; it does not mean the stock depicts LAUXIRIO, is endorsed by its subjects, or is an official campaign result. The selected crops show hair/process detail without visible faces or third-party branding. Do not repurpose them as staff, client results, or actual studio photography. No paid asset or subscription has been acquired.
 
-The canonical per-placement metadata is in [`src/config/media.ts`](./src/config/media.ts). Run `npm run audit:media` to regenerate [`docs/MEDIA_AUDIT.md`](./docs/MEDIA_AUDIT.md). The audit currently reports 22 placeholders, zero approved assets, 22 missing creator/source/license/acquisition records, six repeated source images, no broken local media paths, and no configured campaign video.
+The canonical per-placement metadata is in [`src/config/media.ts`](./src/config/media.ts). Run `npm run audit:media` to regenerate [`docs/MEDIA_AUDIT.md`](./docs/MEDIA_AUDIT.md). Fifteen placeholders remain, including the artist portraits, studio imagery, grooming, and most lookbook placements. No real LAUXIRIO campaign, team, client-result, or studio media has been supplied; the optional campaign video remains unconfigured.
 
-## Current remote placeholders
+## Selected free-source stock references
 
-The 22 records below are placement entries, not 22 distinct photographs. Their full IDs, dimensions, alt descriptions and intended placements are in the media configuration and generated audit report.
+Each item is an illustrative reference only. Pexels permits free commercial use without required attribution; creator names are retained here as provenance. No separate model/property release documents are held, so keep the selected non-identifying crops and visible stock disclosures in place.
 
-| Unsplash photo ID | Current status | Notes |
-|---|---|---|
-| `photo-1560066984-138dadb4c035` | `unverified-placeholder` | Homepage hero and signature-cut service |
-| `photo-1521590832167-7bcbfaa6381f` | `unverified-placeholder` | Homepage inset and studio interior |
-| `photo-1560869713-7d0a29430803` | `unverified-placeholder` | Philosophy section and studio detail |
-| `photo-1522337360788-8b13dee7a37e` | `unverified-placeholder` | Dimensional colour and lookbook |
-| `photo-1527799820374-dcf8d9d4a388` | `unverified-placeholder` | Hair and scalp service |
-| `photo-1503951914875-452162b0f3f1` | `unverified-placeholder` | Grooming service and lookbook |
-| `photo-1519741497674-611481863552` | `unverified-placeholder` | Bridal and occasion service |
-| `photo-1487412947147-5cebf100ffc2` | `unverified-placeholder` | Consultation service and beauty lookbook |
-| `photo-1562322140-8baeececf3df` | `unverified-placeholder` | Lookbook haircut and journal preview |
-| `photo-1524504388940-b1c1722653e1` | `unverified-placeholder` | Lookbook colour and journal preview |
-| `photo-1488426862026-3ee34a7d66df` | `unverified-placeholder` | Lookbook bridal and occasion |
-| `photo-1633681926022-84c23e8cb2d6` | `unverified-placeholder` | Lookbook texture and journal preview |
-| `photo-1526047932273-341f2a7631f9` | `unverified-placeholder` | Lookbook editorial styling |
-| `photo-1494790108377-be9c29b29330` | `unverified-placeholder` | Illustrative artist portrait; not a LAUXIRIO stylist |
-| `photo-1500648767791-00dcc994a43e` | `unverified-placeholder` | Illustrative artist portrait; not a LAUXIRIO stylist |
-| `photo-1534528741775-53994a69daeb` | `unverified-placeholder` | Illustrative artist portrait; not a LAUXIRIO stylist |
+| Pexels photo | Creator | Placement | Local optimized file | Original asset page |
+|---|---|---|---|---|
+| `6487888` | Matheus Wladeka | Homepage hero poster | `public/media/hero/hero-stylist-detail.webp` | [Pexels](https://www.pexels.com/photo/close-up-of-the-hands-of-a-hairdresser-at-work-6487888/) |
+| `6503332` | Nadezhda Moryak | Signature cut service | `public/media/services/signature-cut-process.webp` | [Pexels](https://www.pexels.com/photo/close-up-photo-of-person-combing-a-hair-6503332/) |
+| `6391646` | Lyn [Lynbot] Michelle | Dimensional colour service | `public/media/services/dimensional-colour-curls.webp` | [Pexels](https://www.pexels.com/photo/a-back-view-of-a-woman-in-denim-jacket-with-a-curly-hair-6391646/) |
+| `23349912` | Oleskandra Biliak | Hair and scalp service | `public/media/services/hair-scalp-care-detail.webp` | [Pexels](https://www.pexels.com/photo/a-hairdresser-combing-clients-hair-23349912/) |
+| `15507425` | Alina Skazka | Bridal and occasion service | `public/media/services/bridal-updo-detail.webp` | [Pexels](https://www.pexels.com/photo/close-up-shot-of-woman-s-hair-15507425/) |
+| `28868043` | Jonathan Borba | Personal consultation service | `public/media/services/consultation-colour-swatches.webp` | [Pexels](https://www.pexels.com/photo/person-choosing-hair-color-from-sample-palette-28868043/) |
+| `23349887` | Oleskandra Biliak | Lookbook texture reference | `public/media/gallery/wet-hair-texture-study.webp` | [Pexels](https://www.pexels.com/photo/a-hand-holding-wet-hair-23349887/) |
 
-These are direct CDN references. The creator, original asset page, asset-specific license/release details and acquisition date are not recorded; the CDN URL and a general platform license are not a substitute for that evidence.
+All seven use the [Pexels License](https://www.pexels.com/license/) and were acquired on 2026-11-25. The per-file metadata, exact dimensions, alt text and intended placements are in `src/config/media.ts`. The selected stock photographs are not verified LAUXIRIO work and must remain visibly disclosed as illustrative.
 
 ## Candidate source terms research
 
@@ -44,7 +35,7 @@ Official pages checked 2026-11-25. This is a sourcing checklist, not legal advic
 | [Unsplash License](https://unsplash.com/license) | The platform publishes a general license; use of a CDN image does not identify its original page or resolve model, property, trademark or endorsement concerns. | Original photo page, contributor, current terms, commercial context and any necessary releases. |
 | [Pexels License](https://www.pexels.com/license/) | Its official page allows free commercial use without required attribution, with restrictions including no implied endorsement and limits involving identifiable people/brands. | Original asset page, creator, consent/releases, trademarks, context and accurate attribution records for internal audit. |
 
-No asset from these sources was selected or downloaded. Free availability is not the same as clearance for a particular campaign or model/property release.
+Free availability is not the same as ownership, endorsement, or a separate model/property release. No stock artist portraits, campaign video, or actual-studio photographs have been selected.
 
 ## Registering approved files
 

@@ -1,6 +1,6 @@
 # Media audit report
 
-Generated: 2026-11-24T18:42:54.870Z
+Generated: 2026-11-24T19:05:15.134Z
 
 **Production media status: NOT READY**
 
@@ -9,18 +9,18 @@ This report does not grant or verify rights. Placeholder records are intentional
 ## Summary
 
 - Media entries inspected: 22
-- Approved assets: 0
-- Unverified placeholders: 22
-- Missing creator: 22
-- Missing source page: 22
-- Missing license record: 22
-- Missing acquisition date: 22
+- Approved assets: 7
+- Unverified placeholders: 15
+- Missing creator: 15
+- Missing source page: 15
+- Missing license record: 15
+- Missing acquisition date: 15
 - Missing alt descriptions: 0
 - Missing width values: 0
 - Missing height values: 0
 - Missing intended placements: 0
 - Broken or empty local image files: 0
-- Repeated remote source files: 6
+- Repeated remote source files: 3
 - Hero video: Not configured; still-image poster only.
 - Structural audit errors: 0
 
@@ -28,20 +28,20 @@ This report does not grant or verify rights. Placeholder records are intentional
 
 | Asset ID | Status | Source | Dimensions | Alt | Creator | Source page | License record | Acquired | Placement |
 |---|---|---|---|---|---|---|---|---|---|
-| photo-1560066984-138dadb4c035-homepage-hero-poster | unverified-placeholder | https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2400&h=1600&q=90 | 2400 x 1600 | Present | Missing | Missing | Missing | Missing | Homepage hero poster |
+| pexels-6487888-homepage-hero-poster | approved-licensed | /media/hero/hero-stylist-detail.webp | 2400 x 1600 | Present | Matheus Wladeka | https://www.pexels.com/photo/close-up-of-the-hands-of-a-hairdresser-at-work-6487888/ | https://www.pexels.com/license/ | 2026-11-25 | Homepage hero poster |
 | photo-1521590832167-7bcbfaa6381f-homepage-secondary-editorial-image | unverified-placeholder | https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1100&h=1400&q=88 | 1100 x 1400 | Present | Missing | Missing | Missing | Missing | Homepage secondary editorial image |
 | photo-1560869713-7d0a29430803-homepage-philosophy-section | unverified-placeholder | https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1400&h=1100&q=85 | 1400 x 1100 | Present | Missing | Missing | Missing | Missing | Homepage philosophy section |
-| photo-1560066984-138dadb4c035-service-menu-signature-cut | unverified-placeholder | https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&h=900&q=85 | 1200 x 900 | Present | Missing | Missing | Missing | Missing | Service menu: signature cut |
-| photo-1522337360788-8b13dee7a37e-service-menu-dimensional-colour | unverified-placeholder | https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&h=900&q=85 | 1200 x 900 | Present | Missing | Missing | Missing | Missing | Service menu: dimensional colour |
-| photo-1527799820374-dcf8d9d4a388-service-menu-hair-and-scalp-care | unverified-placeholder | https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1200&h=900&q=85 | 1200 x 900 | Present | Missing | Missing | Missing | Missing | Service menu: hair and scalp care |
+| pexels-6503332-service-menu-signature-cut | approved-licensed | /media/services/signature-cut-process.webp | 1200 x 900 | Present | Nadezhda Moryak | https://www.pexels.com/photo/close-up-photo-of-person-combing-a-hair-6503332/ | https://www.pexels.com/license/ | 2026-11-25 | Service menu: signature cut |
+| pexels-6391646-service-menu-dimensional-colour | approved-licensed | /media/services/dimensional-colour-curls.webp | 1200 x 900 | Present | Lyn [Lynbot] Michelle | https://www.pexels.com/photo/a-back-view-of-a-woman-in-denim-jacket-with-a-curly-hair-6391646/ | https://www.pexels.com/license/ | 2026-11-25 | Service menu: dimensional colour |
+| pexels-23349912-service-menu-hair-and-scalp-care | approved-licensed | /media/services/hair-scalp-care-detail.webp | 1200 x 900 | Present | Oleskandra Biliak | https://www.pexels.com/photo/a-hairdresser-combing-clients-hair-23349912/ | https://www.pexels.com/license/ | 2026-11-25 | Service menu: hair and scalp care |
 | photo-1503951914875-452162b0f3f1-service-menu-grooming | unverified-placeholder | https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&h=900&q=85 | 1200 x 900 | Present | Missing | Missing | Missing | Missing | Service menu: grooming |
-| photo-1519741497674-611481863552-service-menu-bridal-and-occasion | unverified-placeholder | https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=900&q=85 | 1200 x 900 | Present | Missing | Missing | Missing | Missing | Service menu: bridal and occasion |
-| photo-1487412947147-5cebf100ffc2-service-menu-consultation | unverified-placeholder | https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1200&h=900&q=85 | 1200 x 900 | Present | Missing | Missing | Missing | Missing | Service menu: consultation |
+| pexels-15507425-service-menu-bridal-and-occasion | approved-licensed | /media/services/bridal-updo-detail.webp | 1200 x 900 | Present | Alina Skazka | https://www.pexels.com/photo/close-up-shot-of-woman-s-hair-15507425/ | https://www.pexels.com/license/ | 2026-11-25 | Service menu: bridal and occasion |
+| pexels-28868043-service-menu-consultation | approved-licensed | /media/services/consultation-colour-swatches.webp | 1200 x 900 | Present | Jonathan Borba | https://www.pexels.com/photo/person-choosing-hair-color-from-sample-palette-28868043/ | https://www.pexels.com/license/ | 2026-11-25 | Service menu: consultation |
 | photo-1562322140-8baeececf3df-lookbook-haircuts-and-styling | unverified-placeholder | https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&h=1250&q=85 | 1000 x 1250 | Present | Missing | Missing | Missing | Missing | Lookbook: haircuts and styling; Journal: precision cut preview |
 | photo-1524504388940-b1c1722653e1-lookbook-colour | unverified-placeholder | https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&h=1250&q=85 | 1000 x 1250 | Present | Missing | Missing | Missing | Missing | Lookbook: colour; Journal: dimensional colour preview |
 | photo-1488426862026-3ee34a7d66df-lookbook-bridal-and-occasion-styling | unverified-placeholder | https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1000&h=1250&q=85 | 1000 x 1250 | Present | Missing | Missing | Missing | Missing | Lookbook: bridal and occasion styling |
 | photo-1503951914875-452162b0f3f1-lookbook-grooming | unverified-placeholder | https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&h=850&q=85 | 1200 x 850 | Present | Missing | Missing | Missing | Missing | Lookbook: grooming |
-| photo-1633681926022-84c23e8cb2d6-lookbook-texture | unverified-placeholder | https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=1000&h=1250&q=85 | 1000 x 1250 | Present | Missing | Missing | Missing | Missing | Lookbook: texture; Journal: texture preview |
+| pexels-23349887-lookbook-texture | approved-licensed | /media/gallery/wet-hair-texture-study.webp | 1000 x 1250 | Present | Oleskandra Biliak | https://www.pexels.com/photo/a-hand-holding-wet-hair-23349887/ | https://www.pexels.com/license/ | 2026-11-25 | Lookbook: texture |
 | photo-1526047932273-341f2a7631f9-lookbook-editorial-styling | unverified-placeholder | https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1200&h=850&q=85 | 1200 x 850 | Present | Missing | Missing | Missing | Missing | Lookbook: editorial styling |
 | photo-1487412947147-5cebf100ffc2-lookbook-beauty-editorial | unverified-placeholder | https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1000&h=1250&q=85 | 1000 x 1250 | Present | Missing | Missing | Missing | Missing | Lookbook: beauty editorial |
 | photo-1522337360788-8b13dee7a37e-lookbook-colour-study | unverified-placeholder | https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&h=1250&q=85 | 1000 x 1250 | Present | Missing | Missing | Missing | Missing | Lookbook: colour study |
@@ -55,20 +55,13 @@ This report does not grant or verify rights. Placeholder records are intentional
 
 | Asset ID | Current reference | Required metadata | Intended placement |
 |---|---|---|---|
-| photo-1560066984-138dadb4c035-homepage-hero-poster | https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2400&h=1600&q=90 | creator, source page, license record, acquisition date | Homepage hero poster |
 | photo-1521590832167-7bcbfaa6381f-homepage-secondary-editorial-image | https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1100&h=1400&q=88 | creator, source page, license record, acquisition date | Homepage secondary editorial image |
 | photo-1560869713-7d0a29430803-homepage-philosophy-section | https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1400&h=1100&q=85 | creator, source page, license record, acquisition date | Homepage philosophy section |
-| photo-1560066984-138dadb4c035-service-menu-signature-cut | https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&h=900&q=85 | creator, source page, license record, acquisition date | Service menu: signature cut |
-| photo-1522337360788-8b13dee7a37e-service-menu-dimensional-colour | https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&h=900&q=85 | creator, source page, license record, acquisition date | Service menu: dimensional colour |
-| photo-1527799820374-dcf8d9d4a388-service-menu-hair-and-scalp-care | https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1200&h=900&q=85 | creator, source page, license record, acquisition date | Service menu: hair and scalp care |
 | photo-1503951914875-452162b0f3f1-service-menu-grooming | https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&h=900&q=85 | creator, source page, license record, acquisition date | Service menu: grooming |
-| photo-1519741497674-611481863552-service-menu-bridal-and-occasion | https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&h=900&q=85 | creator, source page, license record, acquisition date | Service menu: bridal and occasion |
-| photo-1487412947147-5cebf100ffc2-service-menu-consultation | https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1200&h=900&q=85 | creator, source page, license record, acquisition date | Service menu: consultation |
 | photo-1562322140-8baeececf3df-lookbook-haircuts-and-styling | https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&h=1250&q=85 | creator, source page, license record, acquisition date | Lookbook: haircuts and styling; Journal: precision cut preview |
 | photo-1524504388940-b1c1722653e1-lookbook-colour | https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&h=1250&q=85 | creator, source page, license record, acquisition date | Lookbook: colour; Journal: dimensional colour preview |
 | photo-1488426862026-3ee34a7d66df-lookbook-bridal-and-occasion-styling | https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1000&h=1250&q=85 | creator, source page, license record, acquisition date | Lookbook: bridal and occasion styling |
 | photo-1503951914875-452162b0f3f1-lookbook-grooming | https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&h=850&q=85 | creator, source page, license record, acquisition date | Lookbook: grooming |
-| photo-1633681926022-84c23e8cb2d6-lookbook-texture | https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=1000&h=1250&q=85 | creator, source page, license record, acquisition date | Lookbook: texture; Journal: texture preview |
 | photo-1526047932273-341f2a7631f9-lookbook-editorial-styling | https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1200&h=850&q=85 | creator, source page, license record, acquisition date | Lookbook: editorial styling |
 | photo-1487412947147-5cebf100ffc2-lookbook-beauty-editorial | https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1000&h=1250&q=85 | creator, source page, license record, acquisition date | Lookbook: beauty editorial |
 | photo-1522337360788-8b13dee7a37e-lookbook-colour-study | https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&h=1250&q=85 | creator, source page, license record, acquisition date | Lookbook: colour study |
@@ -80,12 +73,9 @@ This report does not grant or verify rights. Placeholder records are intentional
 
 ## Repeated image references
 
-- images.unsplash.com/photo-1560066984-138dadb4c035: photo-1560066984-138dadb4c035-homepage-hero-poster, photo-1560066984-138dadb4c035-service-menu-signature-cut
 - images.unsplash.com/photo-1521590832167-7bcbfaa6381f: photo-1521590832167-7bcbfaa6381f-homepage-secondary-editorial-image, photo-1521590832167-7bcbfaa6381f-studio-interior-concept
 - images.unsplash.com/photo-1560869713-7d0a29430803: photo-1560869713-7d0a29430803-homepage-philosophy-section, photo-1560869713-7d0a29430803-studio-detail-concept
-- images.unsplash.com/photo-1522337360788-8b13dee7a37e: photo-1522337360788-8b13dee7a37e-service-menu-dimensional-colour, photo-1522337360788-8b13dee7a37e-lookbook-colour-study
 - images.unsplash.com/photo-1503951914875-452162b0f3f1: photo-1503951914875-452162b0f3f1-service-menu-grooming, photo-1503951914875-452162b0f3f1-lookbook-grooming
-- images.unsplash.com/photo-1487412947147-5cebf100ffc2: photo-1487412947147-5cebf100ffc2-service-menu-consultation, photo-1487412947147-5cebf100ffc2-lookbook-beauty-editorial
 
 ## Hero video
 
@@ -96,17 +86,14 @@ This report does not grant or verify rights. Placeholder records are intentional
 
 ### Production blockers
 
-- 22 placeholder entries have not been approved.
-- 22 placeholder entries lack one or more creator, source-page, license-record or acquisition-date fields.
+- 15 placeholder entries have not been approved.
+- 15 placeholder entries lack one or more creator, source-page, license-record or acquisition-date fields.
 
 ### Warnings
 
-- Repeated remote source images.unsplash.com/photo-1560066984-138dadb4c035 is referenced by photo-1560066984-138dadb4c035-homepage-hero-poster, photo-1560066984-138dadb4c035-service-menu-signature-cut.
 - Repeated remote source images.unsplash.com/photo-1521590832167-7bcbfaa6381f is referenced by photo-1521590832167-7bcbfaa6381f-homepage-secondary-editorial-image, photo-1521590832167-7bcbfaa6381f-studio-interior-concept.
 - Repeated remote source images.unsplash.com/photo-1560869713-7d0a29430803 is referenced by photo-1560869713-7d0a29430803-homepage-philosophy-section, photo-1560869713-7d0a29430803-studio-detail-concept.
-- Repeated remote source images.unsplash.com/photo-1522337360788-8b13dee7a37e is referenced by photo-1522337360788-8b13dee7a37e-service-menu-dimensional-colour, photo-1522337360788-8b13dee7a37e-lookbook-colour-study.
 - Repeated remote source images.unsplash.com/photo-1503951914875-452162b0f3f1 is referenced by photo-1503951914875-452162b0f3f1-service-menu-grooming, photo-1503951914875-452162b0f3f1-lookbook-grooming.
-- Repeated remote source images.unsplash.com/photo-1487412947147-5cebf100ffc2 is referenced by photo-1487412947147-5cebf100ffc2-service-menu-consultation, photo-1487412947147-5cebf100ffc2-lookbook-beauty-editorial.
 
 
 The audit exits with code 1 while any placeholder or structural error remains. Supply and review approved media, add complete provenance, then run `node scripts/audit-media.mjs` again.

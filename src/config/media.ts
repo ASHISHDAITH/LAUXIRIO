@@ -17,6 +17,9 @@ export type MediaImage = {
   status: MediaStatus;
 };
 
+const PEXELS_LICENSE_URL = "https://www.pexels.com/license/";
+const MEDIA_ACQUISITION_DATE = "2026-11-25";
+
 function placeholderImage(
   photoId: string,
   width: number,
@@ -40,15 +43,42 @@ function placeholderImage(
   };
 }
 
+function licensedPexelsImage(
+  photoId: string,
+  fileName: string,
+  width: number,
+  height: number,
+  alt: string,
+  creator: string,
+  sourceUrl: string,
+  intendedPlacement: string[],
+): MediaImage {
+  return {
+    id: `pexels-${photoId}-${intendedPlacement[0].toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+    src: `/media/${fileName}`,
+    alt,
+    width,
+    height,
+    creator,
+    sourceUrl,
+    licenseUrl: PEXELS_LICENSE_URL,
+    acquisitionDate: MEDIA_ACQUISITION_DATE,
+    intendedPlacement,
+    status: "approved-licensed",
+  };
+}
+
 export const media = {
   hero: {
-    poster: placeholderImage(
-      "photo-1560066984-138dadb4c035",
+    poster: licensedPexelsImage(
+      "6487888",
+      "hero/hero-stylist-detail.webp",
       2400,
       1600,
-      "Salon editorial scene",
+      "A stylist's hands combing dark hair during a close-up salon service; illustrative stock image.",
+      "Matheus Wladeka",
+      "https://www.pexels.com/photo/close-up-of-the-hands-of-a-hairdresser-at-work-6487888/",
       ["Homepage hero poster"],
-      90,
     ),
     inset: placeholderImage(
       "photo-1521590832167-7bcbfaa6381f",
@@ -67,25 +97,34 @@ export const media = {
     ["Homepage philosophy section"],
   ),
   services: {
-    signatureCut: placeholderImage(
-      "photo-1560066984-138dadb4c035",
+    signatureCut: licensedPexelsImage(
+      "6503332",
+      "services/signature-cut-process.webp",
       1200,
       900,
-      "Haircut and styling concept",
+      "A stylist combing a section of long light hair; illustrative stock image.",
+      "Nadezhda Moryak",
+      "https://www.pexels.com/photo/close-up-photo-of-person-combing-a-hair-6503332/",
       ["Service menu: signature cut"],
     ),
-    dimensionalColour: placeholderImage(
-      "photo-1522337360788-8b13dee7a37e",
+    dimensionalColour: licensedPexelsImage(
+      "6391646",
+      "services/dimensional-colour-curls.webp",
       1200,
       900,
-      "Hair colour concept",
+      "Back view of long curls with warm ombre colour; illustrative stock image, not a Lauxirio result.",
+      "Lyn [Lynbot] Michelle",
+      "https://www.pexels.com/photo/a-back-view-of-a-woman-in-denim-jacket-with-a-curly-hair-6391646/",
       ["Service menu: dimensional colour"],
     ),
-    hairScalpRitual: placeholderImage(
-      "photo-1527799820374-dcf8d9d4a388",
+    hairScalpRitual: licensedPexelsImage(
+      "23349912",
+      "services/hair-scalp-care-detail.webp",
       1200,
       900,
-      "Hair and scalp care concept",
+      "Close-up of a comb being drawn through damp hair by a stylist; illustrative stock image.",
+      "Oleskandra Biliak",
+      "https://www.pexels.com/photo/a-hairdresser-combing-clients-hair-23349912/",
       ["Service menu: hair and scalp care"],
     ),
     grooming: placeholderImage(
@@ -95,18 +134,24 @@ export const media = {
       "Grooming concept",
       ["Service menu: grooming"],
     ),
-    bridal: placeholderImage(
-      "photo-1519741497674-611481863552",
+    bridal: licensedPexelsImage(
+      "15507425",
+      "services/bridal-updo-detail.webp",
       1200,
       900,
-      "Occasion styling concept",
+      "Close-up of a blonde bridal updo with decorative hairpins; illustrative stock image.",
+      "Alina Skazka",
+      "https://www.pexels.com/photo/close-up-shot-of-woman-s-hair-15507425/",
       ["Service menu: bridal and occasion"],
     ),
-    consultation: placeholderImage(
-      "photo-1487412947147-5cebf100ffc2",
+    consultation: licensedPexelsImage(
+      "28868043",
+      "services/consultation-colour-swatches.webp",
       1200,
       900,
-      "Beauty consultation concept",
+      "A hand compares hair-colour swatches on a chart; illustrative stock image.",
+      "Jonathan Borba",
+      "https://www.pexels.com/photo/person-choosing-hair-color-from-sample-palette-28868043/",
       ["Service menu: consultation"],
     ),
   },
@@ -173,12 +218,15 @@ export const media = {
       label: "Texture",
       categories: ["Texture", "Styling", "Editorial"],
       orientation: "portrait",
-      image: placeholderImage(
-        "photo-1633681926022-84c23e8cb2d6",
+      image: licensedPexelsImage(
+        "23349887",
+        "gallery/wet-hair-texture-study.webp",
         1000,
         1250,
-        "Hair texture editorial concept",
-        ["Lookbook: texture", "Journal: texture preview"],
+        "A hand holding damp hair above a wash basin; illustrative stock image.",
+        "Oleskandra Biliak",
+        "https://www.pexels.com/photo/a-hand-holding-wet-hair-23349887/",
+        ["Lookbook: texture"],
       ),
     },
     {

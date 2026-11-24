@@ -33,6 +33,6 @@ Artist profiles must use genuine staff photography and approved names/bios. Unti
 
 An asset is not approved merely because a provider allows downloads or because it loads successfully. Preserve the original asset page, creator, applicable license, acquisition date, releases/consents, intended uses and approval. Respect editorial-only restrictions and limitations on trademarks, identifiable people, implied endorsement and redistribution. Never scrape competitor assets or use watermarked previews. No paid subscription or purchase is authorized by this phase.
 
-## Current decision
+## Phase 4 interim media
 
-No approved campaign media has been provided or purchased. The existing remote images remain explicitly unverified concept placeholders. The complete replacement brief is in [`MEDIA_SHOT_LIST.md`](./MEDIA_SHOT_LIST.md); per-placement audit findings are in [`MEDIA_AUDIT.md`](./MEDIA_AUDIT.md).
+Seven free Pexels images are locally optimized and used as licensed illustrative references for the hero, selected service menu items and one lookbook texture item. Their visible disclosures state they are not LAUXIRIO work; they do not replace the real campaign, studio, team or client-result photography. Fifteen placements remain unverified placeholders. The complete replacement brief is in [`MEDIA_SHOT_LIST.md`](./MEDIA_SHOT_LIST.md); per-placement findings are in [`MEDIA_AUDIT.md`](./MEDIA_AUDIT.md).

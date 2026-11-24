@@ -76,7 +76,7 @@ Email is optional and uses the Resend REST API only when all three email variabl
 
 ## Media and content readiness
 
-Current Unsplash image URLs are unverified editorial placeholders, not approved LAUXIRIO campaign/staff photography. Image metadata and explicit approval status are centralized in `src/config/media.ts`; page copy remains in `src/config/content.ts`. The source/license register is [ASSET_REGISTER.md](./ASSET_REGISTER.md), the requested deliverables are in [docs/MEDIA_SHOT_LIST.md](./docs/MEDIA_SHOT_LIST.md), and the creative guidance is in [docs/MEDIA_ART_DIRECTION.md](./docs/MEDIA_ART_DIRECTION.md). Run `npm run audit:media` to check local paths, metadata and video configuration; the current report is [docs/MEDIA_AUDIT.md](./docs/MEDIA_AUDIT.md). No approved media is present, and the optional hero video remains unconfigured. Placeholder notices remain until approved replacements exist and load correctly.
+Seven Pexels images are locally optimized and licensed for commercial use as illustrative stock references only; they do not represent LAUXIRIO staff, clients, results, campaign work or premises. Fifteen other placements remain unverified placeholders. Image metadata and explicit approval status are centralized in `src/config/media.ts`; page copy remains in `src/config/content.ts`. The source/license register is [ASSET_REGISTER.md](./ASSET_REGISTER.md), the requested deliverables are in [docs/MEDIA_SHOT_LIST.md](./docs/MEDIA_SHOT_LIST.md), and the creative guidance is in [docs/MEDIA_ART_DIRECTION.md](./docs/MEDIA_ART_DIRECTION.md). Run `npm run audit:media` to check local paths, metadata and video configuration; the current report is [docs/MEDIA_AUDIT.md](./docs/MEDIA_AUDIT.md). No LAUXIRIO-owned campaign, staff, client-result, or actual studio media has been supplied, and the optional hero video remains unconfigured. Placeholder notices remain until approved replacements exist and load correctly.
 
 Salon address, telephone, email, public hours, staff identities, service durations/prices and production domain were not provided. They are intentionally not invented or emitted as HairSalon structured data. Set verified operational configuration before launch. The repository has no `LICENSE`; choose a license before reusing or distributing its code.
 
@@ -95,7 +95,7 @@ npm run audit:media
 
 ## Homepage hero update
 
-The homepage uses a cinematic editorial composition: full-bleed salon photography, dark photographic grading, refined headline and clear appointment/menu actions, plus a framed secondary studio photograph. The oversized decorative 3D product bottle has been removed from the first screen so the salon and editorial imagery remain the focus. The secondary photograph is concept media; replace it with salon-owned or properly licensed campaign photography before launch and record its license in ASSET_REGISTER.md.
+The homepage uses a cinematic editorial composition: a full-bleed, locally optimized Pexels craft-detail photo with a visible illustrative-stock disclosure, dark photographic grading, refined headline and clear appointment/menu actions, plus a framed secondary studio concept placeholder. The oversized decorative 3D product bottle has been removed from the first screen so the salon and editorial imagery remain the focus. Replace the stock poster and secondary placeholder with owner-approved LAUXIRIO campaign/studio photography before launch.
 
 ## Phase 2 content and experience
 
