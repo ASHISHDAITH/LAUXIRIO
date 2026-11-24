@@ -8,7 +8,7 @@ The canonical per-placement metadata is in [`src/config/media.ts`](./src/config/
 
 ## Selected free-source stock references
 
-Each item is an illustrative reference only. Pexels permits free commercial use without required attribution; creator names are retained here as provenance. No separate model/property release documents are held, so keep the selected non-identifying crops and visible stock disclosures in place.
+Each item is an illustrative reference only. Pexels permits free commercial use without required attribution; creator names are retained here as provenance. The selected crops emphasize hair and process details without visible faces. No separate model/property release documents are held, so keep the visible stock disclosures in place and do not imply endorsement.
 
 | Pexels photo | Creator | Placement | Local optimized file | Original asset page |
 |---|---|---|---|---|
